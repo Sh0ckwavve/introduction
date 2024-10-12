@@ -3,10 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styless.css">
     <script src="https://cdn.tailwindcss.com"></script>
     
+<style>
+    /*---------------navbar start------------------*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: black ;/*#e0f7fa */
+    height: fit-content;
+    background: black;
+    box-sizing: border-box;
+    width: 100vw;
+}
 
+.logo{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.logo img{
+    height: 80px;
+    width: auto;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    padding-right: 40px;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: "nunito", sans-serif;
+    font-style: normal;
+}
+.nav-links li a:hover, .nav-links li a.active { /*to make the words active when being used*/
+    color: aqua;
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after{/*to make the words active and underline it when being used*/
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: navy;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 5vh;
+    cursor: pointer;
+    color: white;
+    padding-right: 15px;
+}
+
+
+/*---------------navbar end------------------*/
+
+.course {
+    font-family: Arial, sans-serif;
+    background-color: #2C2F33;
+    color: #00FFFF; /* Text color to aqua */
+    margin: 0;
+    padding: 20px;
+    height: 100%; /* Full height */
+    overflow-x: hidden; /* Avoid horizontal scrolling */
+    display: flex;
+    justify-content: flex-start; /* Page starts from the top */
+    align-items: flex-start;
+    width: 100vw;
+}
+
+.container5 {
+    width: 100vw;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    height: auto; /* Fix height to auto for overflow */
+}
+
+/* Hover effect on the container */
+.container5:hover {
+    transform: translateY(-10px); /* Moves the container upwards on hover */
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category {
+    background-color: #23272A;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1 1 300px;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for individual categories */
+.category:hover {
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+.category h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.category ul {
+    list-style-type: none;
+}
+
+.category ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-family: "Open sans", sans-serif;
+}
+
+@media (max-width: 768px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .category {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+.container12 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+}
+
+.company-info, .useful-links, .quick-contact {
+    flex: 1 1 30%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.company-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.company-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    font-family: "Open sans", sans-serif;
+}
+
+.useful-links h3, .quick-contact h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.useful-links ul {
+    list-style-type: none;
+}
+
+.useful-links ul li {
+    margin-bottom: 8px;
+}
+
+.useful-links ul li a {
+    color: #7a3e99;
+    text-decoration: none;
+    font-family: "Open sans", sans-serif;
+}
+
+.useful-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.quick-contact {
+    padding: 20px;
+    margin-bottom: 20px; /* Ensures space between the form and the footer */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.quick-contact h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.quick-contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-contact form input,
+.quick-contact form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-family: "Open sans", sans-serif
+}
+
+.quick-contact form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif
+}
+
+.quick-contact form button:hover {
+    background-color: #0056b3;
+}
+
+#successMessage {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    display: none;
+    font-family: "Montserrat", sans-serif
+}
+
+/* Ensure footer has enough margin */
+footer {
+    margin-top: 40px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .quick-contact {
+        margin-bottom: 30px; /* Extra margin on small screens */
+    }
+}
+
+
+.section-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #7a3e99;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .company-info, .useful-links, .quick-contact {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+/* Ensure body and html have no default margins */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 20px;
+    width: 100vw; /* Full viewport width */
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-column {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f7c942;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.footer-column p {
+    font-size: 14px;
+    color: #bbb;
+    font-family: "Open sans", sans-serif;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    font-family: "Open sans", sans-serif;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-family: "Open sans", sans-serif;
+}
+
+.footer-column ul li a:hover {
+    color: #f7c942;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        margin: 20px 0;
+    }
+}
+
+
+</style>
   
 </head>
 <body>
@@ -25,6 +410,169 @@
             </ul>
         </nav>
         <!--------------nav bar ends here------------------>
+
+        <section class="course" id="course">
+            <div class="container5">
+                <div class="section">
+                    <h2>Self-paced Programs</h2>
+                    <div class="categories">
+                        <!-- Existing categories -->
+                        <div class="category">
+                            <h3>Accounting & Taxation</h3>
+                            <ul>
+                                <li>Basics of Ratio Analysis</li>
+                                <li>Basics of the U.S Individual Tax Code</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Banking</h3>
+                            <ul>
+                                <li>Investment Banking and Private Equity: Masterclass</li>
+                                <li>Foundational Certification in BFSI</li>
+                                <li>Certification in BFSI with E&ICT NIT Patna</li>
+                            </ul>
+                        </div>
+                        <!-- Add the new categories from the image -->
+                        <div class="category">
+                            <h3>Business Analytics</h3>
+                            <ul>
+                                <li>Fundamentals of Data Analysis</li>
+                                <li>Exploratory Factor Analysis</li>
+                                <li>Business Analysis using Excel</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Core Engineering</h3>
+                            <ul>
+                                <li>Roadmap to being an Arduino Developer</li>
+                                <li>Understanding Drones: The Comprehensive Guide</li>
+                                <li>Home Automation with Arduino</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Others</h3>
+                            <ul>
+                                <li>Understanding the Digital Library</li>
+                                <li>Quantum Computing and Its Application using IBM Qiskit</li>
+                                <li>Advanced Quantum Computing with IBM Qiskit</li>
+                            </ul>
+                        </div>
+                        <!-- Remaining existing categories -->
+                        <div class="category">
+                            <h3>Finance</h3>
+                            <ul>
+                                <li>Fundamentals of Indian Stock Market</li>
+                                <li>Investment in Mutual Funds, Equity and SIP</li>
+                                <li>Stock Market: Advanced Technical Analysis</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Human Resources</h3>
+                            <ul>
+                                <li>Basics of Organizational HR Management</li>
+                                <li>Foundational Certification in Human Resource Management</li>
+                                <li>Certification in Human Resource with E&ICT NIT Patna</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Operations</h3>
+                            <ul>
+                                <li>Foundational Certification in Operations Management</li>
+                                <li>Certification in Operations Management with E&ICT NIT Patna</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Advertising & Media</h3>
+                            <ul>
+                                <li>Hands-on Video Editing</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Marketing</h3>
+                            <ul>
+                                <li>Guide to Affiliate Marketing and Understanding the Industry</li>
+                                <li>LinkedIn Marketing</li>
+                                <li>Get started with SEO</li>
+                                <li>Foundational Certification in Marketing</li>
+                                <li>Certification in Marketing with E&ICT NIT Patna</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Content & Journalism</h3>
+                            <ul>
+                                <li>Mastering Tech Content Writing</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Consulting</h3>
+                            <ul>
+                                <li>How to approach Consulting and Market Research</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Design</h3>
+                            <ul>
+                                <li>Fundamentals & Opportunities in UX Designing</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Leadership</h3>
+                            <ul>
+                                <li>Essentials for Team Management</li>
+                                <li>Super MBA - Certification in Management and Leadership</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Career Development</h3>
+                            <ul>
+                                <li>Mastering Visual Presentation</li>
+                                <li>Job Readiness Bootcamp</li>
+                                <li>ABC of Introducing Yourself using Soft skills</li>
+                                <li>Resume Building : Masterclass</li>
+                                <li>Company Research</li>
+                                <li>Soft Skills</li>
+                                <li>Basics of LinkedIn</li>
+                                <li>Placement Booster Certification Program</li>
+                                <li>Foundational Certification in Corporate Readiness Course</li>
+                                <li>PULSE - Corporate Readiness</li>
+                                <li>Career Acceleration Certification from NIT Patna</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Web Development</h3>
+                            <ul>
+                                <li>Mastering Vanity URL using MEAN</li>
+                                <li>Basics of Web Development</li>
+                                <li>Creating a myPortfolio Application</li>
+                                <li>Mastering the Art of Snowflake WebUI - Part 1</li>
+                                <li>Web Development using WordPress</li>
+                                <li>Design a Shopping Cart Using Java Framework</li>
+                                <li>Mastering the Art of Snowflake WebUI - Part 2</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Cloud Computing</h3>
+                            <ul>
+                                <li>Mastering Google Cloud in 24 hours</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>AI/ML Machine Learning</h3>
+                            <ul>
+                                <li>Topic Modelling Techniques with NLP (Natural Language Processing)</li>
+                                <li>Machine Learning for Spam Detection : An Overview</li>
+                            </ul>
+                        </div>
+                        <div class="category">
+                            <h3>Data Science</h3>
+                            <ul>
+                                <li>K-Means Clustering</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <div class="container12" id="container12">
@@ -51,7 +599,7 @@
                 <h3>Quick Contact</h3>
                 <form id="forms" action="https://api.web3forms.com/submit" method="POST">
                     <!-- Required Hidden Input for Web3Forms API Access Key -->
-                    <input type="hidden" name="access_key" value="8c0006ca-e71e-4eee-b075-a1cf7309842b">
+                    <input type="hidden" name="access_key" value="2c53c69f-2a3e-4015-ad15-88cfb3de4823">
             
                     <!-- Form Fields with Name Attributes -->
                     <input type="text" name="name" placeholder="Name*" required>
