@@ -192,6 +192,16 @@ body{
     font-family: "Montserrat", sans-serif;
 }
 
+@media (max-width: 768px) {
+    hero{
+    padding : 20px;
+    }
+    contain1{
+        height: 545px;
+        width: 60%;
+    }
+}
+
 .navbarmain{
     background-image: url("images/techimg5.png");
    
@@ -549,6 +559,7 @@ body{
     font-size: 1.2em;
     color: #666;
     font-family: "Open sans", sans-serif;
+    
   }
   
   /* Services Wrapper */
