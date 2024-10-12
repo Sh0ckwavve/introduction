@@ -44,6 +44,7 @@ h6 {
 body{
     width: 100%;
     background-color: #f9f9f9;
+    width: 100vw;
 }
 
 .section-p1 {
@@ -59,6 +60,7 @@ body{
     height: fit-content;
     background: black;
     box-sizing: border-box;
+    width: 100vw;
 }
 
 .logo{
@@ -121,6 +123,7 @@ body{
     min-height: 100vh; /* Full viewport height */
     padding: 40px;
     background-color: white;
+    width: 100vw;
 }
 
 .benefits-container {
@@ -271,6 +274,7 @@ body{
 .middle-brain-section {
     padding: 40px 20px;
     background-color: #f9f9f9;
+    width: 100vw;
 }
 
 .container1 {
@@ -338,6 +342,7 @@ body{
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    width: 100vw;
 }
 
 .container2 h1 {
@@ -416,9 +421,9 @@ body{
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    font-family: "Montserrat", sans-serif;
-            font-weight: 500;
+    
     margin-bottom: 20px;
+    width: 100vw;
 }
 
 .container3 {
@@ -435,9 +440,6 @@ body{
     text-align: center;
     color: #7d1054;
     margin-bottom: 20px;
-    font-size: 30px;
-    font-family: "Montserrat", sans-serif;
-            font-weight: 500;
 }
 
 .content3 {
@@ -445,8 +447,6 @@ body{
     flex-wrap: wrap;
     gap: 20px;
     font-size: 14px;
-    font-family: "Open sans", sans-serif;
-    font-weight: 500;
 }
 
 .image3, .text3 {
@@ -454,17 +454,16 @@ body{
 }
 
 .image3 img {
-    max-width: 100%;
-    border-radius: 10px;
-    height: 500px;
+        max-width: 100%;
+border-radius: 10px;
+height: 500px;
 }
 
 .text3 p, .additional-content p {
     margin-bottom: 10px;
     text-align: justify;
-    font-size: 14px;
     font-family: "Open sans", sans-serif;
-    font-weight: 500;
+    font-size: 14px;
 }
 
 .additional-content {
@@ -474,17 +473,12 @@ body{
 .additional-content ol {
     margin: 10px 0;
     padding-left: 20px;
-    font-size: 14px;
-font-family: "Open sans", sans-serif;
-font-weight: 500;
 }
 
 .additional-content li {
     margin-bottom: 5px;
-    font-size: 14px;
     font-family: "Open sans", sans-serif;
-    font-weight: 500;
-    
+    font-size: 14px;
 }
 
 .dropdown {
@@ -500,6 +494,7 @@ font-weight: 500;
     border: none;
     cursor: pointer;
     text-align: left;
+    font-family: "Montserrat", sans-serif;
 }
 
 .dropdown-content {
@@ -507,9 +502,7 @@ font-weight: 500;
     padding: 20px;
     border: 1px solid #ddd;
     border-top: none;
-    font-size: 14px;
-font-family: "Open sans", sans-serif;
-font-weight: 500;
+    font-family: "Open sans", sans-serif;
 }
 
 .dropdown-content img {
@@ -519,12 +512,17 @@ font-weight: 500;
 }
 
 @media (max-width: 768px) {
-    .content {
+    .content3 {
         flex-direction: column;
     }
 
     .dropdown-btn {
         font-size: 16px;
+    }
+    .image3 img{
+        max-width: 100%;
+        border-radius: 10px;
+        height: 300px;
     }
 }
 
@@ -542,7 +540,6 @@ font-weight: 500;
     width: 100%;
     text-align: left;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
 }
 
 .dropdown-content {
@@ -551,6 +548,7 @@ font-weight: 500;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-top: 10px;
+    font-family: "Open sans", sans-serif;
 }
 
 .dropdown-content img {
@@ -565,17 +563,21 @@ font-weight: 500;
     align-items: center;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     .section3,
     .section4 {
         flex-direction: row;
         align-items: flex-start;
+        padding-top: 10px;
     }
 
     .section3 img,
     .section4 img {
         margin-right: 20px;
-        height: 190px;
+    }
+
+    .dropdown-content p{
+        font-family: "Montserrat", sans-serif;
     }
 }
 
@@ -585,6 +587,7 @@ font-weight: 500;
     justify-content: space-between;
     padding: 20px;
     background-color: #f9f9f9;
+    width: 100vw;
 }
 
 .company-info, .useful-links, .quick-contact {
@@ -822,6 +825,11 @@ footer {
     background-color: #f9f9f9;
     padding: 40px 20px;
 }
+
+.d1 ,.d2 p,.d3 p,.d4 p,.d5 p,.d6 p{
+    font-family: "Open sans", sans-serif;
+    font-size: 14px;
+}
     </style>
   
 </head>
@@ -868,7 +876,7 @@ footer {
         </div>
     </section>
 
-    <section id="tech" class="tech">
+    <section id="tech"  class="tech">
         <div class="container3">
             <h1>Midbrain Activation Technique</h1>
             <div class="content3">
@@ -905,7 +913,7 @@ footer {
                     <section id="mba3-body" class="section3">
                         <img src="images/plane1.jpeg" alt="" height="400px" width="400px">
                         <div>
-                            <p>The answer is discovered within the booklet “right mind education in Infancy via Makoto Shichida section 4 In Chapter three of the e-book, Prof.
+                            <p class="d1">The answer is discovered within the booklet “right mind education in Infancy via Makoto Shichida section 4 In Chapter three of the e-book, Prof.
                                 Shichida talks about 4 distinct services that the proper mind has that the left brain does not. They that you may watch the Japanese youngsters demonstrate some of this knowledge Resonance refers to the truth that the whole lot is made of vibrating particles.
                                 These vibrating particles create waves. Just like a tuning fork, the brain resonates with the waves that emanate from the whole thing around us which creates sounds and images and is able to decide on these up via telepathy.
                                 The resonance perform and the snapshot visualisation perform is finest in babies, which is why children without difficulty exhibit their proper brain skills Geniuses in history had been known to employ both the resonance and picture visualisation capabilities of their right mind.
@@ -916,7 +924,7 @@ footer {
                     </section>
                     <section id="mba4-body" class="section4">
                         <div>
-                            <p>
+                            <p class="d2">
                                 For illustration, some famous writers give an explanation for that after they write their studies, they don’t comply with the normal process of creating a plot first, and they see a movie enjoying of their heads and without difficulty document down everything as they see it.
                                 Excessive-velocity mass memorisation of the correct mind is likened to taking photographs with a camera, as a consequence the time period “photographic reminiscence”.
                                 Unlike the left brain, which remembers details through growing links between new materials to historical recollections already in existence,
@@ -942,7 +950,7 @@ footer {
                     <section id="mba3-body" class="section3">
                         <img src="images/reading.jpeg" alt="" height="200px" width="200px">
                         <div>
-                            <p>Quantum reading – for Adults mothers and fathers far and wide are recognized to make huge sacrifices to present the pleasant schooling they are able to to their youngsters.
+                            <p class="d3">Quantum reading – for Adults mothers and fathers far and wide are recognized to make huge sacrifices to present the pleasant schooling they are able to to their youngsters.
                                 Nowhere is this obvious extra certainly than in international locations like Australia, New Zealand and Canada, populated with the aid of immigrants. Many mom and dad have given up extremely paying, at ease jobs on this quest.
                                 But college schooling as we understand it, is not sufficient. No one has explained this more eloquently than the late Prof. Makoto Shichida.We need enthusiastic educators, dad and mom and others to promote this study and our software in all ingredients of the arena.
                                 If you’re curious about making a change within the lives of your own children and that of others,
@@ -952,7 +960,7 @@ footer {
                     </section>
                     <section id="mba4-body" class="section4">
                         <div>
-                            <p>
+                            <p class="d4">
                                 “Dr Makoto Shichida who dedicated more than 40 years of research into the functioning of the brain,
                                 genuinely uses the term “Interbrain” as an alternative than “Midbrain”. We can preserve to the usage of the term “Midbrain“ as this has been popularised via contemporary tendencies.
                                 Within the human cerebrum, there is a part called the interbrain that lies between the left and the correct hemispheres. It’s primary to evoke this so-called 1/3 brain with a view to beef up the capabilities of the human mind.
@@ -971,7 +979,7 @@ footer {
                 <div class="dropdown-content" id="dropdown-content2">
                     <section id="mba4-body" class="section4">
                         <div>
-                            <p>
+                            <p class="d5">
                                 Midbrain is actually a small area in a brain which mainly serves as the relay centre for the various activities like auditory, visual and motor systems.
                                 Thus, the Midbrain Activation method is in fact a process to the Midbrain Activation, which focuses on improvement of a child’s learning capability and
                                 improves his perception in visual, auditory and various other ways.
@@ -987,7 +995,7 @@ footer {
                     <section id="mba3-body" class="section3">
                         <img src="images/activate.jpeg" alt="" height="400px" width="400px">
                         <div>
-                            <p>The answer is discovered within the booklet “right mind education in Infancy via Makoto Shichida section 4 In Chapter three of the e-book, Prof.
+                            <p class="d2">The answer is discovered within the booklet “right mind education in Infancy via Makoto Shichida section 4 In Chapter three of the e-book, Prof.
                                 Shichida talks about 4 distinct services that the proper mind has that the left brain does not. They that you may watch the Japanese youngsters demonstrate some of this knowledge Resonance refers to the truth that the whole lot is made of vibrating particles.
                                 These vibrating particles create waves. Just like a tuning fork, the brain resonates with the waves that emanate from the whole thing around us which creates sounds and images and is able to decide on these up via telepathy.
                                 The resonance perform and the snapshot visualisation perform is finest in babies, which is why children without difficulty exhibit their proper brain skills Geniuses in history had been known to employ both the resonance and picture visualisation capabilities of their right mind.
@@ -1008,6 +1016,8 @@ footer {
             </div>
 
         </section>
+
+            
 
     <div class="container12" id="container12">
         <div class="company-info">
@@ -1033,7 +1043,7 @@ footer {
             <h3>Quick Contact</h3>
             <form id="forms" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Required Hidden Input for Web3Forms API Access Key -->
-                <input type="hidden" name="access_key" value="8c0006ca-e71e-4eee-b075-a1cf7309842b">
+                <input type="hidden" name="access_key" value="2c53c69f-2a3e-4015-ad15-88cfb3de4823">
         
                 <!-- Form Fields with Name Attributes -->
                 <input type="text" name="name" placeholder="Name*" required>
@@ -1102,9 +1112,9 @@ footer {
             <div class="footer-column">
                 <h3>Contact Info</h3>
                 <ul>
-                    <li>Email: contact@example.com</li>
-                    <li>Phone: +123 456 7890</li>
-                    <li>Address: 123 Street, City, Country</li>
+                    <li>Email: act.s.contact1@gmail.com</li>
+                    <li>Phone: </li>
+                    <li>Address: </li>
                 </ul>
             </div>
         </div>
@@ -1115,6 +1125,33 @@ footer {
     </footer>
 </section>
     
+<script>
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdown-content");
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleDropdown1() {
+        var dropdownContent = document.getElementById("dropdown-content1");
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleDropdown2() {
+        var dropdownContent = document.getElementById("dropdown-content2");
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleDropdown3() {
+        var dropdownContent = document.getElementById("dropdown-content3");
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleDropdown4() {
+        var dropdownContent = document.getElementById("dropdown-content4");
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    }
+</script>
+
 <script>
     function toggleDropdown() {
         var content = document.getElementById('dropdown-content');
@@ -1159,35 +1196,6 @@ footer {
         } else {
             content.style.display = 'block';
         }
-    }
-
-    
-</script>
-
-<script>
-    function toggleDropdown() {
-        var dropdownContent = document.getElementById("dropdown-content");
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleDropdown1() {
-        var dropdownContent = document.getElementById("dropdown-content1");
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleDropdown2() {
-        var dropdownContent = document.getElementById("dropdown-content2");
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleDropdown3() {
-        var dropdownContent = document.getElementById("dropdown-content3");
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-    }
-
-    function toggleDropdown4() {
-        var dropdownContent = document.getElementById("dropdown-content4");
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
     }
 </script>
 
