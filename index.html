@@ -6,6 +6,11 @@
     <title>Responsive Hero Section</title>
     <style>
         /* Reset some basic styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&family=League+Spartan:wght@400;500&family=Merriweather&family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -17,139 +22,125 @@ body, html {
     font-family: 'Arial', sans-serif;
 }
 
-header {
-    position: absolute;
-    width: 100%;
-    z-index: 10;
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: black ;/*#e0f7fa */
+    padding: 10px 20px;
+    background-color: black;
     height: 100px;
-    background: rgba(0,0,0,0.6);
-    box-sizing: border-box;
-    width: 100vw;
 }
 
-.logo{
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.logo img{
+.logo img {
     height: 50px;
-    width: auto;
-    color: white;
-    padding-left: 10px;
-}
-
-.nav-links {
-    list-style: none;
-    padding-right: 40px;
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links li a {
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    font-family: "nunito", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.nav-links li a:hover, .nav-links li a.active { /*to make the words active when being used*/
-    color: aqua;
-}
-
-.nav-links li a.active::after,
-.nav-links li a:hover::after{/*to make the words active and underline it when being used*/
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: navy;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
 }
 
 .hamburger {
-    display: none; /* Hidden by default */
-    font-size: 5vh;
+    display: none;
+    font-size: 30px;
     cursor: pointer;
     color: white;
-    padding-right: 15px;
 }
 
-.dropbtn {
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdown {
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
     position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 22px;
+    font-family: nunito;
+}
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(0,0,0,0.6);
+    background-color: black;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: white;
-    padding: 15px 16px;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    font-family: "nunito", sans-serif;
-  }
-  
-  .dropdown-content a:hover {color: aqua}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: rgba(0,0,0,0.2);
-  }
+    top: 100%;
+}
 
-  @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide nav links initially */
-        flex-direction: column;
-        position: absolute;
-        top: 101px;
-        left: 0;
-        background-color: rgb(0, 0, 0, 0.9);
-        width: 100%;
-        padding: 1rem 0;
-        padding-left: 1rem;
+.nav-links .dropdown-content a {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-family: nunito;
+    font-size: 18px;
+}
+
+.nav-links .dropdown-content a:hover {
+    color: #00d4ff;
+}
+
+.nav-links a:hover {
+    color: #00d4ff;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
     }
     
-    .nav-links li a:hover, .nav-links li a.active { /*to make the words active when being used*/
-        color: aqua;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: 1;
+        padding: 10px;
     }
-    .nav-links.active {
-        display: flex; /* Show nav links when active */
+    
+    .nav-links.show {
+        display: flex;
+    }
+    
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .nav-links .dropdown-content {
+        position: static;
+        display: none;
     }
 
-    .hamburger {
-        display: block; 
-        overflow: hidden;
-        transition: 0.5s;/* Show hamburger icon */
+    .nav-links .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .nav-links .dropdown .dropbtn:focus + .dropdown-content {
+        display: block;
     }
 }
 
@@ -158,7 +149,8 @@ header {
     background-image: url(images/techimg5.png);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: calc(100vh - 100px) !important;
+
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -180,7 +172,6 @@ header {
     position: relative;
     color: white;
     text-align: left;
-    z-index: 2;
     padding: 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -194,12 +185,14 @@ header {
 }
 
 .hero-content .company-name {
-    font-size: 48px;
+    font-size: 45px;
+    font-weight: 500;
     margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .hero-content .subtext {
-    font-size: 24px;
+    font-size: 22px;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -308,119 +301,7 @@ header {
     }
 }
 
-.benefits-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Full viewport height */
-    padding: 40px;
-    background-color: #f9f9f9;
-}
 
-.benefits-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Max width for larger screens */
-}
-
-.image-container {
-    flex: 1 1 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.benefits-list {
-    flex: 1 1 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 20px;
-}
-
-.benefits-list h2 {
-    color: #7a3e99;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.benefits-list ul {
-    list-style: none;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-}
-
-.benefits-list ul li {
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.benefits-list ul li::before {
-    content: '•';
-    color: #7a3e99;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px;
-}
-
-@media (max-width: 1024px) {
-    .benefits-list {
-        padding-left: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .benefits-container {
-        flex-direction: column;
-    }
-
-    .image-container, .benefits-list {
-        flex: 1 1 100%;
-        padding: 0;
-        text-align: center;
-    }
-
-    .benefits-list ul {
-        padding-left: 0;
-    }
-
-    .benefits-list ul li {
-        padding-left: 0;
-    }
-
-    .benefits-list h2 {
-        margin-top: 20px;
-    }
-
-    .image-container {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .benefits-list h2 {
-        font-size: 24px;
-    }
-
-    .benefits-list ul {
-        font-size: 14px;
-    }
-}
 
 .directors-section {
     padding: 40px 20px;
@@ -579,8 +460,8 @@ header {
   }
   
   .service-content p {
-    font-size: 13px;
-    color: #777;
+    font-size: 14px;
+    color: #333;
     font-family: "Open sans", sans-serif;
   }
   
@@ -712,10 +593,7 @@ header {
     font-family: "Montserrat", sans-serif
 }
 
-/* Ensure footer has enough margin */
-footer {
-    margin-top: 40px;
-}
+
 
 /* Responsive behavior */
 @media (max-width: 768px) {
@@ -743,104 +621,95 @@ footer {
     }
 }
 
-
-
-
-/* Ensure body and html have no default margins */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Footer styling */
-footer {
+/* General styles for footer */
+#footermain {
     background-color: #333;
-    color: #fff;
-    padding: 30px 20px;
-    width: 100vw; /* Full viewport width */
-    box-sizing: border-box;
-    position: relative;
-    left: 0;
+    color: white;
+    padding: 20px 0;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 10%;
+    padding: 20px;
+    align-content: center;
 }
 
 .footer-column {
-    flex: 1 1 300px;
-    margin: 10px;
+    flex: 1;
+    min-width: 250px;
 }
 
 .footer-column h3 {
-    font-size: 18px;
     margin-bottom: 15px;
     color: #f7c942;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
 }
 
-.footer-column p {
-    font-size: 14px;
-    color: #bbb;
-    font-family: "Open sans", sans-serif;
-}
-
-.footer-column ul {
-    list-style-type: none;
+.footer-column p, .footer-column ul, .footer-column li {
+    margin: 0;
     padding: 0;
+    list-style: none;
+    font-family: "Open sans", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
 }
 
 .footer-column ul li {
     margin-bottom: 10px;
-    font-family: "Open sans", sans-serif;
 }
 
 .footer-column ul li a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    font-size: 14px;
-    transition: color 0.3s ease;
     font-family: "Open sans", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
 }
 
 .footer-column ul li a:hover {
-    color: #f7c942;
+    text-decoration: underline;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #bbb;
-    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #444;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    font-family: "Open sans", sans-serif;
+    font-weight: 400;
+}
+
+/* Responsive footer */
+@media screen and (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
 
     .footer-column {
-        flex: 1 1 100%;
-        margin: 20px 0;
+        margin-bottom: 20px;
     }
 }
+
+
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo"><img src="images/logof.png" height="500" width="100" alt="Logo"></div>
+            <div class="logo">
+                <img src="images/logof.png" height="50" width="100" alt="Logo">
+            </div>
             <div class="hamburger" id="hamburger">
                 &#9776; <!-- hamburger icon -->
             </div>
@@ -848,18 +717,19 @@ footer {
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about-us">About</a></li>
                 <li><a href="#directors">Directors</a></li>
-                <div class="dropdown">
-                    <li class="dropbtn"><a href="#">Services</a></li>
-                      <div class="dropdown-content">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
                         <a href="dmit.html">DMIT</a>
                         <a href="midbrain.html">Middle brain activation</a>
                         <a href="courses.html">Courses</a>
-                        </div>
-                  </div>
+                    </div>
+                </li>
                 <li><a href="#container12">Contact</a></li>
             </ul>
         </nav>
     </header>
+    
 
     <section class="hero" id="hero">
         <div class="hero-content">
@@ -968,10 +838,9 @@ footer {
       <div class="container12" id="container12">
         <div class="company-info">
             <center><img src="images/logo.PNG" alt="Company Logo" style="width: 166px; height: 169px;"></center>
-            <h2>Mind Tech International</h2>
+            <h2>Advance career technologies</h2>
             <p>
-                Mind Tech Group is a dynamic team of professionals from various fields who have come together to spread Dermatoglyphics Multiple Intelligence Test & Mid Brain Activation concept in India. 
-                Headed by Mr. Jimmy Amin & Team Mind-Tech is committed for the awareness of D.M.I.T. & M.B.A. worldwide.
+                We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.
             </p>
         </div>
 
@@ -1033,76 +902,52 @@ footer {
             </script>
         </div>
         </div>
+
+        <section id="footermain">
+            <footer>
+                <div class="footer-container">
+                    <!-- About Section -->
+                    <div class="footer-column">
+                        <h3>About Us</h3>
+                        <p>We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.</p>
+                    </div>
         
-
-    <section id="footermain">
-    <footer>
-        <div class="footer-container">
-            <!-- About Section -->
-            <div class="footer-column">
-                <h3>About Us</h3>
-                <p>We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.</p>
-            </div>
-
-            <!-- Useful Links Section -->
-            <div class="footer-column">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li><a href="#navbarmain">Home</a></li>
-                    <li><a href="#dmit">DMIT</a></li>
-                    <li><a href="#container12">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="footer-column">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li>Email: act.s.contact1@gmail.com</li>
-                    <li>Phone: </li>
-                    <li>Address: </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 ACT. All rights reserved.</p>
-        </div>
-    </footer>
-</section>
+                    <!-- Useful Links Section -->
+                    <div class="footer-column">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="#navbarmain">Home</a></li>
+                            <li><a href="#dmit">DMIT</a></li>
+                            <li><a href="#container12">Contact</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Contact Section -->
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>Email: act.s.contact1@gmail.com</li>
+                            <li>Phone: (your phone number)</li>
+                            <li>Address: (your address)</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-bottom">
+                    <p>&copy; 2024 ACT. All rights reserved.</p>
+                </div>
+            </footer>
+        </section>
+        
 
 
 <script>
-var buttons = document.getElementsByClassName("toggle-button");
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function() {
-        this.classList.toggle("active-toggle");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
+    // Toggle navbar on mobile
+document.getElementById('hamburger').addEventListener('click', function() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+});
+
 </script>
-
-    <script>
-        var accordionButtons = document.getElementsByClassName("accordion-button");
-        for (var i = 0; i < accordionButtons.length; i++) {
-            accordionButtons[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
-
-    <script src="script.js"></script>
-<script src="script2.js"></script>
 </body>
 </html>
