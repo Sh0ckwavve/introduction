@@ -1,150 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Hero Section</title>
-    <style>
-        /* Reset some basic styling */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kalnia&family=League+Spartan:wght@400;500&family=Merriweather&family=Nunito+Sans:opsz@6..12&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Basic Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: black;
-    height: 100px;
-}
-
-.logo img {
-    height: 50px;
-}
-
-.hamburger {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    font-size: 22px;
-    font-family: nunito;
-}
-
-.nav-links .dropdown {
-    position: relative;
-}
-
-.nav-links .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: black;
-    min-width: 160px;
-    z-index: 1;
-    top: 100%;
-}
-
-.nav-links .dropdown-content a {
-    display: block;
-    background-color: black;
-    color: white;
-    padding: 15px 15px;
-    text-decoration: none;
-    font-family: nunito;
-    font-size: 18px;
-}
-
-.nav-links .dropdown-content a:hover {
-    color: #00d4ff;
-}
-
-.nav-links a:hover {
-    color: #00d4ff;
-}
-
-.nav-links .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Responsive for mobile */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Navbar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    .navbar-custom {
+      background-color: black; /* Background color */
+      color: white;            /* Text color */
+      padding: 20px 15px;      /* Padding for height control */
     }
-    
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: black;
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+      color: white;            /* Text color for brand and links */
+    }
+    .navbar-custom .nav-link:hover {
+      color: #ddd;             /* Hover color for links */
+    }
+    .navbar-toggler {
+      border-color: white;     /* White border for hamburger icon */
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .navbar-nav {
+      margin-left: auto;       /* Align nav items to the right */
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: 2.5rem;
+            padding-left: .5rem;
+            font-size: 20px;
+        }
+    }
+
+    .dropdown-menu {
         position: absolute;
-        top: 100px;
+        top: 100%;
         left: 0;
-        z-index: 1;
-        padding: 10px;
-    }
-    
-    .nav-links.show {
-        display: flex;
-    }
-    
-    .nav-links li {
-        text-align: center;
-        padding: 10px 0;
-    }
-    
-    .nav-links .dropdown-content {
-        position: static;
+        z-index: 1000;
         display: none;
+        float: left;
+        min-width: 10rem;
+        /* padding: .5rem 0; */
+        margin: .125rem 0 0;
+        font-size: 1rem;
+        color: white;
+        text-align: left;
+        list-style: none;
+        background-color: black;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .15);
+        border-radius: .25rem;
     }
 
-    .nav-links .dropdown:hover .dropdown-content {
-        display: none;
-    }
-
-    .nav-links .dropdown .dropbtn:focus + .dropdown-content {
+    .dropdown-item {
         display: block;
+        width: 100%;
+        padding: .25rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: white;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        font-size: 15px;
     }
-}
 
-/* Hero Section Styling */
+    .navbar-brand img {
+        height: 55px;            /* Control logo image height */
+      }
+
+
+      .navbar-custom .navbar-brand:hover,
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .dropdown-item:hover {
+      color: aqua; /* Hover color for all links and brand */
+    }
+
+    .navbar-custom .navbar-brand:hover,
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .dropdown-item:hover {
+      color: aqua;             /* Hover color for all links and brand */
+      background-color: transparent; /* Remove background color on hover */
+    }
+
+    .navbar-toggler {
+        border-color: black;
+    }
+    .navbar-toggler {
+        padding: .25rem .75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: .25rem;
+    }
+
+    button:focus {
+        outline: 1px dotted;
+        outline: none;
+    }
+
+
+
+    /* Hero Section Styling */
 .hero {
     background-image: url(images/techimg5.png);
     background-size: cover;
@@ -700,254 +665,264 @@ body {
     }
 }
 
+    
+    
 
-    </style>
+  </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/logof.png" height="50" width="100" alt="Logo">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">
+        <img src="images/logof.png" alt="Logo">
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about-us">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#directors">Directors</a>
+      </li>
+
+      <!-- Services Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+          <a class="dropdown-item" href="dmit.html">DMIT</a>
+          <a class="dropdown-item" href="middle brain.html">Middle Brain Activation</a>
+          <a class="dropdown-item" href="courses.html">Courses</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#container12">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <p class="date">09 November 2020</p>
+        <h1 class="company-name">Advance Career Technologies Pvt. Ltd.</h1>
+        <p class="subtext">Registered at Registrar of Companies, ROC Mumbai</p>
+    </div>
+</section>
+
+<section id="about-us">
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="content">
+            <div class="text">
+                <h3>Who We Are</h3>
+                <p>
+                    Advance Career Technologies Private Limited is a Private incorporated on 09 November 2020. It is classified as Non-government company and is registered at Registrar of Companies, ROC Mumbai. Its authorized share capital is Rs. 500,000 and its paid up capital is Rs. 500,000. It is inolved in Other education.
+                </p>
+                <h3>Important details</h3>
+                <p>
+                    Advance Career Technologies Private Limited's Annual General Meeting (AGM) was last held on N/A and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 31 March 2023.
+                </p>
             </div>
-            <div class="hamburger" id="hamburger">
-                &#9776; <!-- hamburger icon -->
+            <div class="more-info">
+                <h3>Directors</h3>
+                <p>
+                    Directors of Advance Career Technologies Private Limited are Rubina Gafur Dharwar, Maimuna Shaikh, Shajhan Aisha and Ummesalma Shahnawaz Shaikh.
+                </p>
+                <h3>Contact us</h3>
+                <p>
+                    Advance Career Technologies Private Limited's Corporate Identification Number is (CIN) U80903MH2020PTC349765 and its registration number is 349765.Its Email address is rubinahealux@gmail.com and its registered address is OFFICE NO.SH01A, CHANDRESH RACHANA CHS LTD LODHA COMPLEX, MIRA ROAD EAST , THANE, Maharashtra, India - 401107 .Current status of Advance Career Technologies Private Limited is - Active.
+                </p>
             </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about-us">About</a></li>
-                <li><a href="#directors">Directors</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Services</a>
-                    <div class="dropdown-content">
-                        <a href="dmit.html">DMIT</a>
-                        <a href="midbrain.html">Middle brain activation</a>
-                        <a href="courses.html">Courses</a>
-                    </div>
-                </li>
-                <li><a href="#container12">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
+</section>
+
+<section id="directors" class="directors-section">
+    <h2>Meet Our Directors</h2>
+    <div class="directors-container">
+        <div class="director-card">
+            <img src="images/dirimg.jpg" alt="Director 1" class="director-image">
+            <h3>Ishan Shaikh</h3>
+            <p>Directors</p>
+        </div>
+        <div class="director-card">
+            <img src="images/dirimg.jpg" alt="Director 2" class="director-image">
+            <h3>Ishan Shaikh</h3>
+            <p>Directors</p>
+        </div>
+        <div class="director-card">
+            <img src="images/dirimg.jpg" alt="Director 3" class="director-image">
+            <h3>Ishan Shaikh</h3>
+            <p>Directors</p>
+        </div>
+        <div class="director-card">
+            <img src="images/dirimg.jpg" alt="Director 4" class="director-image">
+            <h3>Emily Johnson</h3>
+            <p>Directors</p>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services-section">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>We offer top-quality services to meet your needs. Explore our offerings below:</p>
+    </div>
+  
+    <div class="services-wrapper">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="images/dmitimg1.jpg" alt="Service 1 Image">
+        </div>
+        <div class="service-content">
+          <h3>DMIT</h3>
+          <p>We conduct DMIT Test which is a finger Print scanning test. This tells about brain structure of a person its helpful to understand your inborn talents, strengths and weakness ets by computer assisted behavioral and medical bio metric assessment, profiling and diagnostic aids based on the study of Dermatoglyphics.</p>
+        </div>
+      </div>
+  
+      <div class="service-card">
+        <div class="service-image">
+          <img src="images/mindbrain.jpg" alt="Service 2 Image">
+        </div>
+        <div class="service-content">
+          <h3>MIND BRAIN ACTIVATION</h3>
+          <p>The Midbrain Activation method is in fact a process to the Midbrain Activation, which focuses on improvement of a child’s learning capability and improves his perception in visual, auditory and various other ways.</p>
+        </div>
+      </div>
+  
+      <div class="service-card">
+        <div class="service-image">
+          <img src="images/courses.jpg" alt="Service 3 Image">
+        </div>
+        <div class="service-content">
+          <h3>Courses</h3>
+          <p>We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <div class="container12" id="container12">
+    <div class="company-info">
+        <center><img src="images/logo.PNG" alt="Company Logo" style="width: 166px; height: 169px;"></center>
+        <h2>Advance career technologies</h2>
+        <p>
+            We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.
+        </p>
+    </div>
+
+    <div class="useful-links">
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="#">DMIT</a></li>
+            <li><a href="#">Mid Brain Activation</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="quick-contact">
+        <h3>Quick Contact</h3>
+        <form id="forms" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Required Hidden Input for Web3Forms API Access Key -->
+            <input type="hidden" name="access_key" value="2c53c69f-2a3e-4015-ad15-88cfb3de4823">
     
-
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <p class="date">09 November 2020</p>
-            <h1 class="company-name">Advance Career Technologies Pvt. Ltd.</h1>
-            <p class="subtext">Registered at Registrar of Companies, ROC Mumbai</p>
+            <!-- Form Fields with Name Attributes -->
+            <input type="text" name="name" placeholder="Name*" required>
+            <input type="text" name="phone" placeholder="Phone Number*" required>
+            <input type="email" name="email" placeholder="Email*" required>
+            <textarea name="message" placeholder="Message" rows="4" required></textarea>
+    
+            <button type="submit">SUBMIT</button>
+        </form>
+    
+        <!-- Success Message (Hidden Initially) -->
+        <div id="successMessage" style="display: none;">
+            <p>Thank you! Your message has been sent successfully.</p>
         </div>
-    </section>
-
-    <section id="about-us">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="content">
-                <div class="text">
-                    <h3>Who We Are</h3>
-                    <p>
-                        Advance Career Technologies Private Limited is a Private incorporated on 09 November 2020. It is classified as Non-government company and is registered at Registrar of Companies, ROC Mumbai. Its authorized share capital is Rs. 500,000 and its paid up capital is Rs. 500,000. It is inolved in Other education.
-                    </p>
-                    <h3>Important details</h3>
-                    <p>
-                        Advance Career Technologies Private Limited's Annual General Meeting (AGM) was last held on N/A and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 31 March 2023.
-                    </p>
-                </div>
-                <div class="more-info">
-                    <h3>Directors</h3>
-                    <p>
-                        Directors of Advance Career Technologies Private Limited are Rubina Gafur Dharwar, Maimuna Shaikh, Shajhan Aisha and Ummesalma Shahnawaz Shaikh.
-                    </p>
-                    <h3>Contact us</h3>
-                    <p>
-                        Advance Career Technologies Private Limited's Corporate Identification Number is (CIN) U80903MH2020PTC349765 and its registration number is 349765.Its Email address is rubinahealux@gmail.com and its registered address is OFFICE NO.SH01A, CHANDRESH RACHANA CHS LTD LODHA COMPLEX, MIRA ROAD EAST , THANE, Maharashtra, India - 401107 .Current status of Advance Career Technologies Private Limited is - Active.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="directors" class="directors-section">
-        <h2>Meet Our Directors</h2>
-        <div class="directors-container">
-            <div class="director-card">
-                <img src="images/dirimg.jpg" alt="Director 1" class="director-image">
-                <h3>Ishan Shaikh</h3>
-                <p>Directors</p>
-            </div>
-            <div class="director-card">
-                <img src="images/dirimg.jpg" alt="Director 2" class="director-image">
-                <h3>Ishan Shaikh</h3>
-                <p>Directors</p>
-            </div>
-            <div class="director-card">
-                <img src="images/dirimg.jpg" alt="Director 3" class="director-image">
-                <h3>Ishan Shaikh</h3>
-                <p>Directors</p>
-            </div>
-            <div class="director-card">
-                <img src="images/dirimg.jpg" alt="Director 4" class="director-image">
-                <h3>Emily Johnson</h3>
-                <p>Directors</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="section-header">
-          <h2>Our Services</h2>
-          <p>We offer top-quality services to meet your needs. Explore our offerings below:</p>
-        </div>
-      
-        <div class="services-wrapper">
-          <div class="service-card">
-            <div class="service-image">
-              <img src="images/dmitimg1.jpg" alt="Service 1 Image">
-            </div>
-            <div class="service-content">
-              <h3>DMIT</h3>
-              <p>We conduct DMIT Test which is a finger Print scanning test. This tells about brain structure of a person its helpful to understand your inborn talents, strengths and weakness ets by computer assisted behavioral and medical bio metric assessment, profiling and diagnostic aids based on the study of Dermatoglyphics.</p>
-            </div>
-          </div>
-      
-          <div class="service-card">
-            <div class="service-image">
-              <img src="images/mindbrain.jpg" alt="Service 2 Image">
-            </div>
-            <div class="service-content">
-              <h3>MIND BRAIN ACTIVATION</h3>
-              <p>The Midbrain Activation method is in fact a process to the Midbrain Activation, which focuses on improvement of a child’s learning capability and improves his perception in visual, auditory and various other ways.</p>
-            </div>
-          </div>
-      
-          <div class="service-card">
-            <div class="service-image">
-              <img src="images/courses.jpg" alt="Service 3 Image">
-            </div>
-            <div class="service-content">
-              <h3>Courses</h3>
-              <p>We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      
-      
-
-      <div class="container12" id="container12">
-        <div class="company-info">
-            <center><img src="images/logo.PNG" alt="Company Logo" style="width: 166px; height: 169px;"></center>
-            <h2>Advance career technologies</h2>
-            <p>
-                We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.
-            </p>
-        </div>
-
-        <div class="useful-links">
-            <h3>Useful Links</h3>
-            <ul>
-                <li><a href="#">DMIT</a></li>
-                <li><a href="#">Mid Brain Activation</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="quick-contact">
-            <h3>Quick Contact</h3>
-            <form id="forms" action="https://api.web3forms.com/submit" method="POST">
-                <!-- Required Hidden Input for Web3Forms API Access Key -->
-                <input type="hidden" name="access_key" value="2c53c69f-2a3e-4015-ad15-88cfb3de4823">
-        
-                <!-- Form Fields with Name Attributes -->
-                <input type="text" name="name" placeholder="Name*" required>
-                <input type="text" name="phone" placeholder="Phone Number*" required>
-                <input type="email" name="email" placeholder="Email*" required>
-                <textarea name="message" placeholder="Message" rows="4" required></textarea>
-        
-                <button type="submit">SUBMIT</button>
-            </form>
-        
-            <!-- Success Message (Hidden Initially) -->
-            <div id="successMessage" style="display: none;">
-                <p>Thank you! Your message has been sent successfully.</p>
-            </div>
-        
-            <script>
-                // Optional: Handle form submission with JavaScript (without page reload)
-                document.getElementById('forms').addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent the default form submission behavior
-                    const form = event.target;
-        
-                    // Send form data using Fetch API
-                    fetch(form.action, {
-                        method: form.method,
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }).then(response => {
-                        if (response.ok) {
-                            // Show success message
-                            document.getElementById('successMessage').style.display = 'block';
-                            form.reset(); // Clear the form
-                        } else {
-                            alert('There was an issue submitting your message. Please try again later.');
-                        }
-                    }).catch(error => {
-                        alert('There was an error submitting the form. Please try again later.');
-                    });
+    
+        <script>
+            // Optional: Handle form submission with JavaScript (without page reload)
+            document.getElementById('forms').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                const form = event.target;
+    
+                // Send form data using Fetch API
+                fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        document.getElementById('successMessage').style.display = 'block';
+                        form.reset(); // Clear the form
+                    } else {
+                        alert('There was an issue submitting your message. Please try again later.');
+                    }
+                }).catch(error => {
+                    alert('There was an error submitting the form. Please try again later.');
                 });
-            </script>
-        </div>
-        </div>
+            });
+        </script>
+    </div>
+    </div>
 
-        <section id="footermain">
-            <footer>
-                <div class="footer-container">
-                    <!-- About Section -->
-                    <div class="footer-column">
-                        <h3>About Us</h3>
-                        <p>We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.</p>
-                    </div>
-        
-                    <!-- Useful Links Section -->
-                    <div class="footer-column">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li><a href="#navbarmain">Home</a></li>
-                            <li><a href="#dmit">DMIT</a></li>
-                            <li><a href="#container12">Contact</a></li>
-                        </ul>
-                    </div>
-        
-                    <!-- Contact Section -->
-                    <div class="footer-column">
-                        <h3>Contact Info</h3>
-                        <ul>
-                            <li>Email: act.s.contact1@gmail.com</li>
-                            <li>Phone: (your phone number)</li>
-                            <li>Address: (your address)</li>
-                        </ul>
-                    </div>
+    <section id="footermain">
+        <footer>
+            <div class="footer-container">
+                <!-- About Section -->
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.</p>
                 </div>
-        
-                <div class="footer-bottom">
-                    <p>&copy; 2024 ACT. All rights reserved.</p>
+    
+                <!-- Useful Links Section -->
+                <div class="footer-column">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#navbarmain">Home</a></li>
+                        <li><a href="#dmit">DMIT</a></li>
+                        <li><a href="#container12">Contact</a></li>
+                    </ul>
                 </div>
-            </footer>
-        </section>
-        
+    
+                <!-- Contact Section -->
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Email: act.s.contact1@gmail.com</li>
+                        <li>Phone: (your phone number)</li>
+                        <li>Address: (your address)</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2024 ACT. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
 
+<!-- jQuery, Popper.js, and Bootstrap JS (in correct order) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    // Toggle navbar on mobile
-document.getElementById('hamburger').addEventListener('click', function() {
-    const navLinks = document.getElementById('nav-links');
-    navLinks.classList.toggle('show');
-});
-
-</script>
 </body>
 </html>
