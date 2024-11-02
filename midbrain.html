@@ -108,61 +108,73 @@
     }
 
             /*---------------homepage start------------------*/
+
             .container1 {
-                display: flex;
-                flex-direction: column;
-                width: 95%;
-                background-color: white;
+                max-width: 95%;
+                margin: 0 auto;
                 padding: 20px;
-                margin-top: 20px;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-                border-radius: 8px;
-                text-align: center;
+            }
+
+            .contain1{
+                background-color:#f9f9f9 ;
             }
     
-            .image-section img {
+            .section1 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border: 1px solid #ddd;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                gap: 20px;
+                justify-content: space-evenly;
+                align-content: center;
+                flex-wrap: wrap;
+            }
+    
+            .section1 img {
                 width: 350px;
                 height: 406px;
-                object-fit: cover; /* Ensures the image fills its dimensions without distortion */
-                margin: 0 auto;
-                border-radius: 8px;
-                display: block;
+                border-radius: 10px;
+                flex-shrink: 0;
             }
     
-            .text-section {
-                margin-top: 20px;
+            .section1 .content1 {
+                max-width: 670px;
+                padding: 20px;
             }
     
-            .text-section h2 {
-                color: #8a244b;
-                margin-bottom: 20px;
+            .section1 h2 {
+                color: #a30f67;
+                font-size: 2rem;
+                margin-top: 0;
             }
     
-            .text-section p {
-                color: #333;
-                line-height: 1.6;
-                margin-bottom: 10px;
-                text-align: justify;
-            }
-    
-            /* Responsive styling for larger screens */
-            @media (min-width: 768px) {
-                .container1 {
-                    flex-direction: row;
-                    gap: 20px;
-                    align-items: center;
-                    text-align: left;
+            @media (max-width: 768px) {
+                .section1 {
+                    flex-direction: column;
+                    text-align: center;
                 }
     
-                .text-section {
-                    text-align: left;
+                .section1 img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 20px;
+                }
+    
+                .section1 .content1 {
+                    padding: 0;
                 }
             }
-
         /*---------------homepage start------------------*/
 
+        .brain-activation-section{
+            background-color:#f9f9f9 ;
+        }
+
         .container2 {
-            margin-top: 20px;
             padding: 20px;
             background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -246,13 +258,10 @@
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 10px;
-            
-            margin-bottom: 20px;
-            width: 100vw;
         }
         
         .container3 {
-            max-width: 1200px;
+            max-width: 95%;
             margin: auto;
             overflow: hidden;
             padding: 20px;
@@ -406,6 +415,7 @@
         
             .dropdown-content p{
                 font-family: "Montserrat", sans-serif;
+                font-size: 15px;
             }
         }
 
@@ -416,7 +426,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    background-color: white;
+    background-color:#f9f9f9 ;
 }
 
 .company-info, .useful-links, .quick-contact {
@@ -662,19 +672,21 @@
 </nav>
 
         <!------------home page starts here--------------->
-       <center> <section class="container1">
-            <div class="image-section">
-                <img src="images/makoto.png" alt="Dr Makoto Shichida">
+        <section class="contain1" id="contain1">
+            <div class="container1">
+                <div class="section1">
+                    <img src="images/makoto.png" alt="Dr Makoto Shichida">
+                    <div class="content1">
+                        <h2>What Is Middle Brain?</h2>
+                        <p>Dr Makoto Shichida who devoted more than 40 years of research into the functioning of the brain, actually uses the term “Interbrain” rather than Midbrain. We will keep to the use of the term “Midbrain “ as this has been popularised by recent developments. Middle Brain also called the mesencephalon, manages the function of both left brain and right brain. It is the portion of the central nervous system it is located below the cerebral cortex and above the hindbrain. It is a small region of the brain that serves as a relay center for visual, Auditory and motor system information.</p>
+                        <p>The middle brain is directly involved with motor and sensory function and any disruptions can cause irreversible damage active middle brain could link left and right brain and also help children to use many higher functions of the right brain easily.</p>
+                        <p>Middle Brain is the control device for the left and right brain. It is also the bridge and a key to open the subconscious. Middle Brain activation awakens the cerebrum’s potential power by highly effective methods to boost memory, reversal of stress, absorbing power and induction force and enable mental strength and so on. Ultimately this strengthened mental ability helps perform better academically.</p>
+                    </div>
+                </div>
             </div>
-            <div class="text-section">
-                <h2>What Is Middle Brain?</h2>
-                <p>Dr Makoto Shichida who devoted more than 40 years of research into the functioning of the brain, actually uses the term “Interbrain” rather than Midbrain. We will keep to the use of the term “Midbrain“ as this has been popularised by recent developments. Middle Brain also called the mesencephalon, manages the function of both left brain and right brain. It is the portion of the central nervous system it is located below the cerebral cortex and above the hindbrain. It is a small region of the brain that serves as a relay center for visual, Auditory and motor system information.</p>
-                <p>The middle brain is directly involved with motor and sensory function and any disruptions can cause irreversible damage active middle brain could link left and right brain and also help children to use many higher functions of the right brain easily.</p>
-                <p>Middle Brain is the control device for the left and right brain. It is also the bridge and a key to open the subconscious. Middle Brain activation awakens the cerebrum’s potential power by highly effective methods to boost memory, reversal of stress, absorbing power and induction force and enable mental strength and so on. Ultimately this strengthened mental ability helps perform better academically.</p>
-            </div>
-        </section></center>
+        </section>
 
-        <center><section class="brain-activation-section">
+        <center><section class="brain-activation-section" id="brain">
             <div class="container2">
                 <h1>Middle Brain Activation Software</h1>
                 <p>We have Midbrain Activation software for Single and Multi user. Single user can use their software only for their purpose. Multi user system can work for own and for others also. Provide franchisee to any number of networks. We will provide you proper, safe and secure software for Midbrain Activation in India. Pre training can be done online or offline. Pre training of Midbrain Activation in India will be given in order to clear your MBA concept and it will give you a clear idea for midbrain activation workshop arrangement, marketing etc. For MBA workshop our trainer will come in your Country/ State/ City to conduct the main two days' workshop. We assure you for successful workshop.</p>
