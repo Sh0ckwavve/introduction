@@ -266,89 +266,82 @@
     }
 }
 
-
-
-.directors-section {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #fff;
-    min-height: 100vh; /* Make sure the section covers the full screen height */
+.vision-mission-section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-}
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the screen */
+    text-align: center;
+    padding: 0px 10px;
+    background-color: white; /* Light background */
+  }
 
-.directors-section h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
+  .vision-mission-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
     color: black;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-}
+  }
 
-.directors-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    flex-grow: 1; /* Allow the container to grow and fill the available space */
-}
-
-.director-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-    max-width: 300px;
-    width: 100%;
+  .vision-mission-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
     justify-content: center;
-}
+    max-width: 1000px;
+  }
 
-.director-card:hover {
-    transform: translateY(-5px);
-}
+  .vision-mission-column {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+  }
 
-.director-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 4px solid #007bff;
-}
-
-.director-card h3 {
-    font-size: 1.5em;
+  .vision-mission-column h2 {
+    font-size: 1.5rem;
+    color: #007bff; /* Blue for subheaders */
     margin-bottom: 10px;
-    color: #333;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-}
+    font-weight: 500;
+  }
 
-.director-card p {
-    font-size: 17px;
-    color: #666;
+  .vision-mission-column p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
     font-family: "Open sans", sans-serif;
-    font-weight: 400;
-}
+    font-weight: 500;
+  }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .directors-container {
-        grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    .vision-mission-section {
+      height: auto; /* Remove fixed height on smaller screens */
+      padding: 40px 20px; /* Add more padding for smaller screens */
+      justify-content: center;
+      align-items: center; /* Center content horizontally */
+      text-align: center; /* Align text in the center */
     }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .directors-container {
-        grid-template-columns: repeat(2, 1fr);
+    .vision-mission-content {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center each column */
     }
-}
+
+    .vision-mission-section h1 {
+      font-size: 2rem; /* Reduce the size of the header */
+      margin-bottom: 20px;
+    }
+
+    .vision-mission-column {
+      text-align: center; /* Align text in the center for smaller screens */
+    }
+  }
+
+
+
+
 
 .services-section {
     padding: 25px 20px;
@@ -689,7 +682,7 @@
         <a class="nav-link" href="#about-us">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#directors">Directors</a>
+        <a class="nav-link" href="#vision">Vision & mission</a>
       </li>
 
       <!-- Services Dropdown -->
@@ -747,31 +740,23 @@
     </div>
 </section>
 
-<section id="directors" class="directors-section">
-    <h2>Meet Our Directors</h2>
-    <div class="directors-container">
-        <div class="director-card">
-            <img src="images/dirimg.jpg" alt="Director 1" class="director-image">
-            <h3>Ishan Shaikh</h3>
-            <p>Directors</p>
-        </div>
-        <div class="director-card">
-            <img src="images/dirimg.jpg" alt="Director 2" class="director-image">
-            <h3>Ishan Shaikh</h3>
-            <p>Directors</p>
-        </div>
-        <div class="director-card">
-            <img src="images/dirimg.jpg" alt="Director 3" class="director-image">
-            <h3>Ishan Shaikh</h3>
-            <p>Directors</p>
-        </div>
-        <div class="director-card">
-            <img src="images/dirimg.jpg" alt="Director 4" class="director-image">
-            <h3>Emily Johnson</h3>
-            <p>Directors</p>
-        </div>
+<section class="vision-mission-section" id="vision">
+    <h1>My Vision and Mission</h1>
+    <div class="vision-mission-content">
+      <div class="vision-mission-column">
+        <h2>Vision</h2>
+        <p>
+            To empower every student with the skills, knowledge, and confidence to thrive in their careers, creating a future where opportunities are accessible to all and career success is attainable by everyone.
+        </p>
+      </div>
+      <div class="vision-mission-column">
+        <h2>Mission</h2>
+        <p>
+            To bridge the gap between education and employment by providing high-quality training, personalized career counseling, and industry-aligned placement services. We are committed to helping students unlock their potential, connect with meaningful career paths, and achieve professional success in a rapidly evolving job market.
+        </p>
+      </div>
     </div>
-</section>
+  </section>
 
 <section id="services" class="services-section">
     <div class="section-header">
@@ -827,10 +812,10 @@
     <div class="useful-links">
         <h3>Useful Links</h3>
         <ul>
-            <li><a href="dmit.html">DMIT</a></li>
-            <li><a href="midbrain.html">Mid Brain Activation</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="#container12">Contact</a></li>
+            <li><a href="#">DMIT</a></li>
+            <li><a href="#">Mid Brain Activation</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
 
