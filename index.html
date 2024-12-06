@@ -154,6 +154,7 @@
     font-weight: 500;
     margin-bottom: 20px;
     font-family: "Montserrat", sans-serif;
+    color: white;
 }
 
 .hero-content .subtext {
@@ -183,7 +184,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding-top: 50px;
 }
 
 .container h2 {
@@ -266,31 +267,186 @@
     }
 }
 
+.company h2 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.achievements h2 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+/* Partner Companies Section */
+.wrapper {
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+      left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  to {
+      right: -200px;
+  }
+}
+
+.itemLeft,
+.itemRight {
+  width: 200px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+.itemLeft {
+  left: max(calc(200px * 6), 100%);
+  animation-name: scrollLeft;
+}
+
+.itemRight {
+  right: max(calc(200px * 6), calc(100% + 200px));
+  animation-name: scrollRight;
+}
+
+.wrapper img {
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgb(6, 18, 82);
+  border-radius: 6px;
+}
+
+.item1 {
+  animation-delay: calc(30s / 6 * (6 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 6 * (6 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 6 * (6 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 6 * (6 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 6 * (6 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 6 * (6 - 6) * -1);
+}
+
+/* Achievements Section */
+.achievements {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  text-align: center;
+}
+
+.achievement {
+  display: inline-block;
+  font-size: 18px;
+  color: #333;
+}
+
+.achievement .number {
+  font-size: 28px;
+  color: #000;
+  font-weight: bold;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .achievements-container {
+      flex-wrap: wrap;
+      gap: 30px;
+  }
+
+  .achievement {
+      width: 45%;
+  }
+  .achievements h2 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+}
+
+
+
 .vision-mission-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the screen */
     text-align: center;
-    padding: 0px 10px;
+    padding: px 10px;
+    padding-bottom:70px;
+    padding-top: 10px;
+
     background-color: white; /* Light background */
   }
 
   .vision-mission-section h1 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: black;
+    font-size: 2.5rem;
+    color: #333;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
   }
 
   .vision-mission-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
-    max-width: 1000px;
+        flex-wrap: wrap;
+        gap: 75px;
+        justify-content: center;
+        max-width: 1150px;
   }
 
   .vision-mission-column {
@@ -312,7 +468,7 @@
     color: #555;
     line-height: 1.6;
     font-family: "Open sans", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   @media (max-width: 768px) {
@@ -332,9 +488,6 @@
     .vision-mission-section h1 {
       font-size: 2rem; /* Reduce the size of the header */
       margin-bottom: 20px;
-    }
-        .vision-mission-section p {
-      font-size: 0.95rem; /* Reduce the size of the header */
     }
 
     .vision-mission-column {
@@ -443,6 +596,175 @@
     }
   }
 
+  .sliders{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding-bottom: 20px;
+  }
+
+
+    .sliders h1 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        color: #333;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+    }
+
+    .slider-container {
+        width: 90%;
+        max-width: 1200px;
+        overflow: hidden;
+        position: relative;
+
+    }
+
+    .cards-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .cards {
+        flex: 0 0 33.33%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .card-content {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        height: 450px; /* Ensures the height dynamically adjusts */
+        overflow: hidden; /* Optional: Adds a minimum height for uniformity */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Updated shadow: darker and deeper */
+    }
+
+    .icon-space {
+        width: 40px;
+        height: 40px;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-space img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #444;
+        margin: 60px 0 15px; /* Adjusted margin to leave space for the icon */
+    }
+
+    .card-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 15px;
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: 220px; /* Restrict the height for the list */
+    }
+
+    .card-content ul li {
+        margin: 8px 0;
+        font-size: 0.9em;
+        color: #666;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-content ul li::before {
+        content: "✔";
+        color: #008cba;
+        margin-right: 8px;
+        font-size: 1.1em;
+    }
+
+    .know-more-btn {
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.9em;
+        cursor: pointer;
+        margin-top: auto; /* Pushes the button to the bottom if space allows */
+    }
+
+    .know-more-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .navigation {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+
+    .arrow {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background-color: #333;
+    }
+ /* Media Query for Mobile View */
+ @media (max-width: 768px) {
+  .cards {
+      flex: 0 0 100%; /* Take the full width of the container */
+  }
+
+  .cards-wrapper {
+      display: flex;
+      flex-wrap: nowrap; /* Ensure cards scroll horizontally */
+  }
+
+  .slider-container {
+      width: 100%; /* Adjust to fit screen width */
+  }
+}
   .container12 {
     display: flex;
     flex-wrap: wrap;
@@ -724,24 +1046,111 @@
                 <p>
                     Advance Career Technologies Private Limited is a Private incorporated on 09 November 2020. It is classified as Non-government company and is registered at Registrar of Companies, ROC Mumbai. Its authorized share capital is Rs. 500,000 and its paid up capital is Rs. 500,000. It is inolved in Other education.
                 </p>
-                <h3>Important details</h3>
-                <p>
-                    Advance Career Technologies Private Limited's Annual General Meeting (AGM) was last held on N/A and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 31 March 2023.
-                </p>
             </div>
             <div class="more-info">
-                <h3>Directors</h3>
-                <p>
-                    Directors of Advance Career Technologies Private Limited are Rubina Gafur Dharwar, Maimuna Shaikh, Shajhan Aisha and Ummesalma Shahnawaz Shaikh.
-                </p>
-                <h3>Contact us</h3>
-                <p>
-                    Advance Career Technologies Private Limited's Corporate Identification Number is (CIN) U80903MH2020PTC349765 and its registration number is 349765.Its Email address is rubinahealux@gmail.com and its registered address is OFFICE NO.SH01A, CHANDRESH RACHANA CHS LTD LODHA COMPLEX, MIRA ROAD EAST , THANE, Maharashtra, India - 401107 .Current status of Advance Career Technologies Private Limited is - Active.
-                </p>
+              <h3>Important details</h3>
+              <p>
+                  Advance Career Technologies Private Limited's Annual General Meeting (AGM) was last held on N/A and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 31 March 2023.
+              </p>
+
             </div>
         </div>
     </div>
 </section>
+
+ <!-- Partner Companies Section -->
+ <section class="company" id="company">
+  <h2>Our Entrusted Partner Companies</h2>
+  <div class="wrapper">
+      <div class="itemLeft item1"><img src="images/g1.png" alt="Image 1"></div>
+      <div class="itemLeft item2"><img src="images/g2.png" alt="Image 2"></div>
+      <div class="itemLeft item3"><img src="images/g3.png" alt="Image 3"></div>
+      <div class="itemLeft item4"><img src="images/g4.png" alt="Image 4"></div>
+      <div class="itemLeft item5"><img src="images/g5.png" alt="Image 5"></div>
+      <div class="itemLeft item6"><img src="images/g6.png" alt="Image 6"></div>
+  </div>
+  <div class="wrapper">
+      <div class="itemRight item1"><img src="images/g7.png" alt="Image 7"></div>
+      <div class="itemRight item2"><img src="images/g8.png" alt="Image 8"></div>
+      <div class="itemRight item3"><img src="images/g9.png" alt="Image 9"></div>
+      <div class="itemRight item4"><img src="images/g10.png" alt="Image 10"></div>
+      <div class="itemRight item5"><img src="images/g11.png" alt="Image 11"></div>
+      <div class="itemRight item6"><img src="images/g12.png" alt="Image 12"></div>
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements">
+  <h2>Our Achievements</h2>
+  <div class="achievements-container">
+      <div class="achievement">
+          <span class="number" data-target="6000">0</span>
+          Domain-Specific Experts
+      </div>
+      <div class="achievement">
+          <span class="number" data-target="350000">0</span>
+          Aspirants Impacted
+      </div>
+      <div class="achievement">
+          <span class="number" data-target="100000">0</span>
+          Min's of Career Hacks
+      </div>
+      <div class="achievement">
+          <span class="number" data-target="5000">0</span>
+          Companies Associated
+      </div>
+  </div>
+</section>
+
+<script>
+  // Typing effect for numbers
+  const numbers = document.querySelectorAll('.number');
+
+  // Function to trigger confetti
+  function triggerConfetti() {
+      confetti({
+          particleCount: 3,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+      });
+      confetti({
+          particleCount: 3,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+      });
+  }
+
+  // Trigger continuous confetti during typing
+  function triggerConfettiDuringTyping() {
+      setInterval(() => {
+          triggerConfetti();
+      }, 500);
+  }
+
+  numbers.forEach((number) => {
+      const target = +number.getAttribute('data-target');
+      const increment = Math.ceil(target / 200);
+      let current = 0;
+
+      function updateNumber() {
+          if (current < target) {
+              current += increment;
+              if (current > target) current = target;
+              number.textContent = current.toLocaleString() + '+';
+              setTimeout(updateNumber, 10);
+          }
+      }
+
+      updateNumber();
+  });
+
+  triggerConfettiDuringTyping();
+</script>
+
+
+
 
 <section class="vision-mission-section" id="vision">
     <h1>My Vision and Mission</h1>
@@ -760,6 +1169,189 @@
       </div>
     </div>
   </section>
+
+  <section class="sliders" id="sliders">
+    <h1 class="up">Upskilling Programs</h1>
+    <div class="slider-container">
+        <div class="cards-wrapper">
+            <!-- Card 1 -->
+            <div class="cards">
+                <div class="card-content">
+                    <div class="icon-space">
+                        <img src="https://via.placeholder.com/20" alt="Icon">
+                    </div>
+                    <h3>Post Graduate Certification</h3>
+                    <ul>
+                        <li>100% Placement Assistance</li>
+                        <li>Extensive Domain-Skills Training</li>
+                        <li>Industry-Renowned PG Certification</li>
+                        <li>Learn from Industry Experts</li>
+                        <li>IIBF Certification in AML and KYC</li>
+                    </ul>
+                    <a href="#" class="know-more-btn">Know More</a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="cards">
+              <div class="card-content">
+                  <div class="icon-space">
+                      <img src="https://via.placeholder.com/20" alt="Icon">
+                  </div>
+                  <h3>Advanced General Management Program with E&ICT Academy IIT Guwahati</h3>
+                  <ul>
+                      <li>100% Placement Assurance by Expertrons with a minimum CTC of 5LPA</li>
+                      <li>Paid Internships in top companies with a stipend up to INR 15000</li>
+                      <li>Gain insights from Industry Experts</li>
+                      <li>Earn E&ICT Academy, IIT Guwahati Alumni Status</li>
+                  </ul>
+                  <a href="#" class="know-more-btn">Know More</a>
+              </div>
+          </div>
+  
+          <div class="cards">
+            <div class="card-content">
+                <div class="icon-space">
+                    <img src="https://via.placeholder.com/20" alt="Icon">
+                </div>
+                <h3>Internship Program with E&ICT Academy IIT Guwahati</h3>
+                <ul>
+                    <li>Self-paced course</li>
+                    <li>4 weeks program in hybrid mode</li>
+                    <li>Internship completion certificate</li>
+                    <li>Final Presentation to be conducted by E&ICT Academy IIT Guwahati</li>
+                    <li>Online Project-Based Internship in collaboration with E&ICT III Guwahati</li>
+                </ul>
+                <a href="#" class="know-more-btn">Know More</a>
+            </div>
+        </div>
+  
+          <div class="cards">
+            <div class="card-content">
+                <div class="icon-space">
+                    <img src="https://via.placeholder.com/20" alt="Icon">
+                </div>
+                <h3>Expertrons CACP</h3>
+                <ul>
+                    <li>Extensive Job Hunt & Job Application Workshop</li>
+                    <li>Crack Tough Interviews & Get Selected Faster</li>
+                    <li>Long-term Job Security</li>
+                    <li>Become Job-Ready in just 7 days</li>
+                </ul>
+                <a href="#" class="know-more-btn">Know More</a>
+            </div>
+        </div>
+            <!-- Card 5 -->
+            <div class="cards">
+                <div class="card-content">
+                    <div class="icon-space">
+                        <img src="https://via.placeholder.com/20" alt="Icon">
+                    </div>
+                    <h3>Expertrons PLUS</h3>
+                    <ul>
+                        <li>Comprehensive Training Program</li>
+                        <li>IT, Finance, Data Analytics, Data Science, Product Management, Design (UI/UX)</li>
+                        <li>Soft Skills Training</li>
+                        <li>1:1 Mentorship from Industry Experts</li>
+                    </ul>
+                    <a href="#" class="know-more-btn">Know More</a>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="arrow left">&lt;</button>
+            <button class="arrow right">&gt;</button>
+        </div>
+        <div class="dots"></div>
+    </div>
+  
+    <script>
+  
+        const cardsWrapper = document.querySelector('.cards-wrapper');
+        const dotsContainer = document.querySelector('.dots');
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+    
+        let currentSlide = 0;
+        let cardsPerSlide = 3; // Default: show 3 cards per slide
+        const totalCards = document.querySelectorAll('.cards').length;
+    
+        // Adjust cards per slide based on screen size
+        function updateCardsPerSlide() {
+            if (window.innerWidth <= 768) {
+                cardsPerSlide = 1; // Show 1 card per slide on mobile view
+            } else {
+                cardsPerSlide = 3; // Show 3 cards per slide on larger screens
+            }
+            updateDots();
+            updateSliderPosition();
+        }
+    
+        // Create dots dynamically based on the total slides
+        function updateDots() {
+            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+            dotsContainer.innerHTML = ''; // Clear previous dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                }
+                dot.dataset.index = i; // Store the slide index
+                dotsContainer.appendChild(dot);
+    
+                // Add click event for dot navigation
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+                    updateSliderPosition();
+                    updateActiveDot();
+                });
+            }
+        }
+    
+        // Update the active dot
+        function updateActiveDot() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+    
+        // Update the slider position
+        function updateSliderPosition() {
+            const slideWidth = cardsWrapper.firstElementChild.offsetWidth;
+            const offset = -currentSlide * slideWidth * cardsPerSlide;
+            cardsWrapper.style.transform = `translateX(${offset}px)`;
+        }
+    
+        // Move to the previous slide
+        leftArrow.addEventListener('click', () => {
+            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSliderPosition();
+            updateActiveDot();
+        });
+    
+        // Move to the next slide
+        rightArrow.addEventListener('click', () => {
+            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSliderPosition();
+            updateActiveDot();
+        });
+    
+        // Handle window resize to recalculate slides and dots
+        window.addEventListener('resize', () => {
+            updateCardsPerSlide();
+        });
+    
+        // Initialize the slider
+        updateCardsPerSlide();
+    </script>
+  
+  </section>
+
+
+
 
 <section id="services" class="services-section">
     <div class="section-header">
@@ -799,6 +1391,8 @@
       </div>
     </div>
   </section>
+
+
   
   
   
@@ -911,6 +1505,39 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+  const dots = document.querySelectorAll('.carousel-dots span');
+  const totalSlides = Math.ceil(slides.length / (window.innerWidth < 768 ? 1 : 3));
+
+  const updateSlides = () => {
+      const offset = slideIndex * -100;
+      document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+  }
+
+  const nextSlide = () => {
+      slideIndex = (slideIndex + 1) % totalSlides;
+      updateSlides();
+  }
+
+  const prevSlide = () => {
+      slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+      updateSlides();
+  }
+
+  const currentSlide = (n) => {
+      slideIndex = n - 1;
+      updateSlides();
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', nextSlide);
+  document.getElementById('prevBtn').addEventListener('click', prevSlide);
+  updateSlides();
+</script>
+
 
 </body>
 </html>
