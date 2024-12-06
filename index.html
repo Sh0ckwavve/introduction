@@ -770,6 +770,10 @@
   .slider-container {
       width: 100%; /* Adjust to fit screen width */
   }
+
+  .up{
+    text-align: center;
+  }
 }
   .container12 {
     display: flex;
@@ -1108,87 +1112,6 @@
   </div>
 </section>
 
-
-
-<script>
-  // Typing effect for numbers
-  const numbers = document.querySelectorAll('.number');
-
-    // Existing confetti trigger function
-    function triggerConfetti() {
-        confetti({
-            particleCount: 3,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 }
-        });
-        confetti({
-            particleCount: 3,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 }
-        });
-    }
-  
-    // Function to check if the company section is in view
-    function isInView(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-  
-    // Add event listener to trigger confetti when the company section is in view
-    document.addEventListener('scroll', function () {
-        const companySection = document.getElementById('company');
-        if (isInView(companySection)) {
-            triggerConfetti();
-        }
-    });
-  
-    // Optional: Trigger confetti continuously while in view
-    function triggerConfettiContinuously() {
-        const intervalId = setInterval(() => {
-            const companySection = document.getElementById('company');
-            if (isInView(companySection)) {
-                triggerConfetti();
-            } else {
-                clearInterval(intervalId);
-            }
-        }, 500);
-    }
-  
-    // Start the continuous confetti effect
-    triggerConfettiContinuously();
-
-  
-
-  numbers.forEach((number) => {
-      const target = +number.getAttribute('data-target');
-      const increment = Math.ceil(target / 200);
-      let current = 0;
-
-      function updateNumber() {
-          if (current < target) {
-              current += increment;
-              if (current > target) current = target;
-              number.textContent = current.toLocaleString() + '+';
-              setTimeout(updateNumber, 10);
-          }
-      }
-
-      updateNumber();
-  });
-
- 
-</script>
-
-
-
-
 <section class="vision-mission-section" id="vision">
     <h1>My Vision and Mission</h1>
     <div class="vision-mission-content">
@@ -1300,90 +1223,6 @@
         </div>
         <div class="dots"></div>
     </div>
-  
-    <script>
-  
-        const cardsWrapper = document.querySelector('.cards-wrapper');
-        const dotsContainer = document.querySelector('.dots');
-        const leftArrow = document.querySelector('.arrow.left');
-        const rightArrow = document.querySelector('.arrow.right');
-    
-        let currentSlide = 0;
-        let cardsPerSlide = 3; // Default: show 3 cards per slide
-        const totalCards = document.querySelectorAll('.cards').length;
-    
-        // Adjust cards per slide based on screen size
-        function updateCardsPerSlide() {
-            if (window.innerWidth <= 768) {
-                cardsPerSlide = 1; // Show 1 card per slide on mobile view
-            } else {
-                cardsPerSlide = 3; // Show 3 cards per slide on larger screens
-            }
-            updateDots();
-            updateSliderPosition();
-        }
-    
-        // Create dots dynamically based on the total slides
-        function updateDots() {
-            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
-            dotsContainer.innerHTML = ''; // Clear previous dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                if (i === currentSlide) {
-                    dot.classList.add('active');
-                }
-                dot.dataset.index = i; // Store the slide index
-                dotsContainer.appendChild(dot);
-    
-                // Add click event for dot navigation
-                dot.addEventListener('click', () => {
-                    currentSlide = i;
-                    updateSliderPosition();
-                    updateActiveDot();
-                });
-            }
-        }
-    
-        // Update the active dot
-        function updateActiveDot() {
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
-    
-        // Update the slider position
-        function updateSliderPosition() {
-            const slideWidth = cardsWrapper.firstElementChild.offsetWidth;
-            const offset = -currentSlide * slideWidth * cardsPerSlide;
-            cardsWrapper.style.transform = `translateX(${offset}px)`;
-        }
-    
-        // Move to the previous slide
-        leftArrow.addEventListener('click', () => {
-            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSliderPosition();
-            updateActiveDot();
-        });
-    
-        // Move to the next slide
-        rightArrow.addEventListener('click', () => {
-            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSliderPosition();
-            updateActiveDot();
-        });
-    
-        // Handle window resize to recalculate slides and dots
-        window.addEventListener('resize', () => {
-            updateCardsPerSlide();
-        });
-    
-        // Initialize the slider
-        updateCardsPerSlide();
-    </script>
   
   </section>
 
@@ -1573,6 +1412,166 @@
   document.getElementById('nextBtn').addEventListener('click', nextSlide);
   document.getElementById('prevBtn').addEventListener('click', prevSlide);
   updateSlides();
+</script>
+
+<script>
+  // Typing effect for numbers
+  const numbers = document.querySelectorAll('.number');
+
+    // Existing confetti trigger function
+    function triggerConfetti() {
+        confetti({
+            particleCount: 3,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 3,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
+    }
+  
+    // Function to check if the company section is in view
+    function isInView(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+  
+    // Add event listener to trigger confetti when the company section is in view
+    document.addEventListener('scroll', function () {
+        const companySection = document.getElementById('company');
+        if (isInView(companySection)) {
+            triggerConfetti();
+        }
+    });
+  
+    // Optional: Trigger confetti continuously while in view
+    function triggerConfettiContinuously() {
+        const intervalId = setInterval(() => {
+            const companySection = document.getElementById('company');
+            if (isInView(companySection)) {
+                triggerConfetti();
+            } else {
+                clearInterval(intervalId);
+            }
+        }, 500);
+    }
+  
+    // Start the continuous confetti effect
+    triggerConfettiContinuously();
+
+  
+
+  numbers.forEach((number) => {
+      const target = +number.getAttribute('data-target');
+      const increment = Math.ceil(target / 200);
+      let current = 0;
+
+      function updateNumber() {
+          if (current < target) {
+              current += increment;
+              if (current > target) current = target;
+              number.textContent = current.toLocaleString() + '+';
+              setTimeout(updateNumber, 10);
+          }
+      }
+
+      updateNumber();
+  });
+
+ 
+</script>
+
+<script>
+  
+  const cardsWrapper = document.querySelector('.cards-wrapper');
+  const dotsContainer = document.querySelector('.dots');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+
+  let currentSlide = 0;
+  let cardsPerSlide = 3; // Default: show 3 cards per slide
+  const totalCards = document.querySelectorAll('.cards').length;
+
+  // Adjust cards per slide based on screen size
+  function updateCardsPerSlide() {
+      if (window.innerWidth <= 768) {
+          cardsPerSlide = 1; // Show 1 card per slide on mobile view
+      } else {
+          cardsPerSlide = 3; // Show 3 cards per slide on larger screens
+      }
+      updateDots();
+      updateSliderPosition();
+  }
+
+  // Create dots dynamically based on the total slides
+  function updateDots() {
+      const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+      dotsContainer.innerHTML = ''; // Clear previous dots
+      for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('span');
+          dot.classList.add('dot');
+          if (i === currentSlide) {
+              dot.classList.add('active');
+          }
+          dot.dataset.index = i; // Store the slide index
+          dotsContainer.appendChild(dot);
+
+          // Add click event for dot navigation
+          dot.addEventListener('click', () => {
+              currentSlide = i;
+              updateSliderPosition();
+              updateActiveDot();
+          });
+      }
+  }
+
+  // Update the active dot
+  function updateActiveDot() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+      });
+  }
+
+  // Update the slider position
+  function updateSliderPosition() {
+      const slideWidth = cardsWrapper.firstElementChild.offsetWidth;
+      const offset = -currentSlide * slideWidth * cardsPerSlide;
+      cardsWrapper.style.transform = `translateX(${offset}px)`;
+  }
+
+  // Move to the previous slide
+  leftArrow.addEventListener('click', () => {
+      const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSliderPosition();
+      updateActiveDot();
+  });
+
+  // Move to the next slide
+  rightArrow.addEventListener('click', () => {
+      const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSliderPosition();
+      updateActiveDot();
+  });
+
+  // Handle window resize to recalculate slides and dots
+  window.addEventListener('resize', () => {
+      updateCardsPerSlide();
+  });
+
+  // Initialize the slider
+  updateCardsPerSlide();
 </script>
 
 
