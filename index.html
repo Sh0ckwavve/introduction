@@ -1224,6 +1224,90 @@
         <div class="dots"></div>
     </div>
   
+    <script>
+  
+        const cardsWrapper = document.querySelector('.cards-wrapper');
+        const dotsContainer = document.querySelector('.dots');
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+    
+        let currentSlide = 0;
+        let cardsPerSlide = 3; // Default: show 3 cards per slide
+        const totalCards = document.querySelectorAll('.cards').length;
+    
+        // Adjust cards per slide based on screen size
+        function updateCardsPerSlide() {
+            if (window.innerWidth <= 768) {
+                cardsPerSlide = 1; // Show 1 card per slide on mobile view
+            } else {
+                cardsPerSlide = 3; // Show 3 cards per slide on larger screens
+            }
+            updateDots();
+            updateSliderPosition();
+        }
+    
+        // Create dots dynamically based on the total slides
+        function updateDots() {
+            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+            dotsContainer.innerHTML = ''; // Clear previous dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                }
+                dot.dataset.index = i; // Store the slide index
+                dotsContainer.appendChild(dot);
+    
+                // Add click event for dot navigation
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+                    updateSliderPosition();
+                    updateActiveDot();
+                });
+            }
+        }
+    
+        // Update the active dot
+        function updateActiveDot() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+    
+        // Update the slider position
+        function updateSliderPosition() {
+            const slideWidth = cardsWrapper.firstElementChild.offsetWidth;
+            const offset = -currentSlide * slideWidth * cardsPerSlide;
+            cardsWrapper.style.transform = `translateX(${offset}px)`;
+        }
+    
+        // Move to the previous slide
+        leftArrow.addEventListener('click', () => {
+            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSliderPosition();
+            updateActiveDot();
+        });
+    
+        // Move to the next slide
+        rightArrow.addEventListener('click', () => {
+            const totalSlides = Math.ceil(totalCards / cardsPerSlide);
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSliderPosition();
+            updateActiveDot();
+        });
+    
+        // Handle window resize to recalculate slides and dots
+        window.addEventListener('resize', () => {
+            updateCardsPerSlide();
+        });
+    
+        // Initialize the slider
+        updateCardsPerSlide();
+    </script>
+  
   </section>
 
 
@@ -1488,90 +1572,6 @@
   });
 
  
-</script>
-
-<script>
-  
-  const cardsWrapper = document.querySelector('.cards-wrapper');
-  const dotsContainer = document.querySelector('.dots');
-  const leftArrow = document.querySelector('.arrow.left');
-  const rightArrow = document.querySelector('.arrow.right');
-
-  let currentSlide = 0;
-  let cardsPerSlide = 3; // Default: show 3 cards per slide
-  const totalCards = document.querySelectorAll('.cards').length;
-
-  // Adjust cards per slide based on screen size
-  function updateCardsPerSlide() {
-      if (window.innerWidth <= 768) {
-          cardsPerSlide = 1; // Show 1 card per slide on mobile view
-      } else {
-          cardsPerSlide = 3; // Show 3 cards per slide on larger screens
-      }
-      updateDots();
-      updateSliderPosition();
-  }
-
-  // Create dots dynamically based on the total slides
-  function updateDots() {
-      const totalSlides = Math.ceil(totalCards / cardsPerSlide);
-      dotsContainer.innerHTML = ''; // Clear previous dots
-      for (let i = 0; i < totalSlides; i++) {
-          const dot = document.createElement('span');
-          dot.classList.add('dot');
-          if (i === currentSlide) {
-              dot.classList.add('active');
-          }
-          dot.dataset.index = i; // Store the slide index
-          dotsContainer.appendChild(dot);
-
-          // Add click event for dot navigation
-          dot.addEventListener('click', () => {
-              currentSlide = i;
-              updateSliderPosition();
-              updateActiveDot();
-          });
-      }
-  }
-
-  // Update the active dot
-  function updateActiveDot() {
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentSlide);
-      });
-  }
-
-  // Update the slider position
-  function updateSliderPosition() {
-      const slideWidth = cardsWrapper.firstElementChild.offsetWidth;
-      const offset = -currentSlide * slideWidth * cardsPerSlide;
-      cardsWrapper.style.transform = `translateX(${offset}px)`;
-  }
-
-  // Move to the previous slide
-  leftArrow.addEventListener('click', () => {
-      const totalSlides = Math.ceil(totalCards / cardsPerSlide);
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateSliderPosition();
-      updateActiveDot();
-  });
-
-  // Move to the next slide
-  rightArrow.addEventListener('click', () => {
-      const totalSlides = Math.ceil(totalCards / cardsPerSlide);
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSliderPosition();
-      updateActiveDot();
-  });
-
-  // Handle window resize to recalculate slides and dots
-  window.addEventListener('resize', () => {
-      updateCardsPerSlide();
-  });
-
-  // Initialize the slider
-  updateCardsPerSlide();
 </script>
 
 
