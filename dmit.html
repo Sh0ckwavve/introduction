@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMIT Benefits - Advance Career Technologies</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="description" content="Discover the power of Dermatoglyphics Multiple Intelligence Test (DMIT) with Advance Career Technologies. Understand brain function, personality traits, and learning patterns to guide children's development effectively.">
+    <meta name="keywords" content="DMIT, brain function analysis, personality assessment, learning patterns, child development, Advance Career Technologies">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="common.css" rel="stylesheet">
+  <style>
+    
+
+            /*---------------homepage start------------------*/
+.benefits-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+}
+
+.benefits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.image-container {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.benefits-list {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.benefits-list h2 {
+    color: #7a3e99;
+    font-size: 28px;
+    padding: 10px;
+    font-family: "nunito", sans-serif;
+    font-weight: 500;
+}
+
+.benefits-list ul {
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.benefits-list ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.benefits-list ul li::before {
+    
+    color: #7a3e99;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+    .benefits-list {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-container {
+        flex-direction: column;
+    }
+
+    .image-container, .benefits-list {
+        flex: 1 1 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .benefits-list ul {
+        padding-left: 0;
+    }
+
+    .benefits-list ul li {
+        padding-left: 0;
+    }
+
+    .benefits-list h2 {
+        margin-top: 20px;
+    }
+
+    .image-container {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-list h2 {
+        font-size: 24px;
+    }
+
+    .benefits-list ul {
+        font-size: 14px;
+    }
+}
+
+
+/*---------------homepage end------------------*/
+/*-----------------about starts------------------*/
+#product1{
+    text-align: center;
+    color: black;
+}
+
+/*-----------------about ends-------------------*/
+
+
+.main-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.header-title {
+    font-size: 2em;
+    color: #6D2077;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.header-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+.accordion-button {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.accordion-button:before {
+    content: '\25bc'; /* Down arrow */
+    color: #777;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: transform 0.4s;
+}
+.accordion-button.active:before {
+    transform: rotate(-180deg); /* Up arrow */
+}
+.accordion-button.active, .accordion-button:hover {
+    background-color: #ccc;
+}
+.accordion-panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+.accordion-panel ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.accordion-panel ul li {
+    margin-bottom: 10px;
+    font-family: "Open sans", sans-serif;
+    font-size: 15px;
+}
+.content-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    .content-area {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .intelligence-details {
+        order: 1;
+    }
+    .intelligence-visual {
+        order: 2;
+    }
+}
+.intelligence-details {
+    flex: 1;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.intelligence-visual {
+    flex: 1;
+    width: 100%;
+    max-width: 600px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 20px;
+    align-self: center;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.intelligence-visual img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.accordition-panel li{
+    font-family: 'Nunito Sans', sans-serif;
+    list-style-type: circle;
+    font-size: 15px
+}
+
+.full-width-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.main-header {
+    font-size: 2em;
+    color: #6D2077;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.intro-text {
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+.flexible-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+@media (min-width: 768px) {
+    .flexible-layout {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .content-block {
+        flex: 1;
+        margin: 0 10px;
+    }
+}
+.content-block {
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.toggle-button {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.toggle-button:before {
+    content: '\25bc'; /* Down arrow */
+    color: #777;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: transform 0.4s;
+}
+.active-toggle:before {
+    transform: rotate(-180deg); /* Up arrow */
+}
+.active-toggle, .toggle-button:hover {
+    background-color: #ccc;
+}
+.hidden-content {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+.hidden-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+.hidden-content ul li {
+    margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+
+  .container12 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+}
+
+.company-info, .useful-links, .quick-contact {
+    flex: 1 1 30%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.company-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.company-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    font-family: "Open sans", sans-serif;
+}
+
+.useful-links h3, .quick-contact h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.useful-links ul {
+    list-style-type: none;
+}
+
+.useful-links ul li {
+    margin-bottom: 8px;
+}
+
+.useful-links ul li a {
+    color: #7a3e99;
+    text-decoration: none;
+    font-family: "Open sans", sans-serif;
+}
+
+.useful-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.quick-contact {
+    padding: 20px;
+    margin-bottom: 20px; /* Ensures space between the form and the footer */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.quick-contact h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.quick-contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-contact form input,
+.quick-contact form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-family: "Open sans", sans-serif
+}
+
+.quick-contact form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif
+}
+
+.quick-contact form button:hover {
+    background-color: #0056b3;
+}
+
+#successMessage {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    display: none;
+    font-family: "Montserrat", sans-serif
+}
+
+
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .quick-contact {
+        margin-bottom: 30px; /* Extra margin on small screens */
+    }
+}
+
+
+.section-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #7a3e99;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .company-info, .useful-links, .quick-contact {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+    
+    
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="index.html">
+        <img src="images/logof.png" alt="Logo">
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#dmit">DMIT</a>
+      </li>
+
+
+      <!-- Services Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+          <a class="dropdown-item" href="dmit.html">DMIT</a>
+          <a class="dropdown-item" href="midbrain.html">Middle Brain Activation</a>
+          <a class="dropdown-item" href="courses.html">Courses</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#container12">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+        <!------------home page starts here--------------->
+    
+        <section id="dmit" class="benefits-section">
+            <div class="benefits-container">
+                <div class="image-container">
+                    <center><img src="images/dmitimg1.jpg" alt="DMIT Image"></center>
+                </div>
+                <div class="benefits-list">
+                    <h2>BENEFITS OF DMIT</h2>
+                    <ul>
+                        <li>Understanding distinct areas in your brain that are under or overemphasized.</li>
+                        <li>Understand your child's inborn personality.</li>
+                        <li>Know how to apply the right path in your kid’s upbringing.</li>
+                        <li>Know learning patterns of an individual (Audio, Video, or Kinesthetic).</li>
+                        <li>Supports in selecting superior field, stream, career, learning style, and partner.</li>
+                        <li>Discern different quotients other than IQ (EQ, AQ, and CQ).</li>
+                        <li>Identification of strengths and weaknesses of any individual.</li>
+                        <li>Accessible to understand the behavior and attitude of students and adults.</li>
+                        <li>Relationship management through improved understanding.</li>
+                        <li>Understanding functions of different parts of the human brain.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <div class="main-container">
+            <div class="header-title">Types of Multiple Intelligence</div>
+            <div class="header-subtitle">After years of extensive research, Prof Howard Gardner defined 8 intelligences. The multiple intelligences he defined are:</div>
+            
+            <div class="content-area">
+                <div class="intelligence-details">
+                    <button class="accordion-button">Visual-Spatial Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>The ability to think in pictures and visualize future results.</li>
+                            <li>The ability to imagine things in your mind's eye.</li>
+                            <li>The ability to perceive spatial information.</li>
+                            <li>Those with strong spatial intelligence are often proficient at solving puzzles.</li>
+                            <li>This intelligence is high in artists, photographers, pilots, painters, and architects.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Verbal Linguistic Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>The ability to read, write, and communicate with words.</li>
+                            <li>The ability to use language to express one's thoughts and to understand other people orally or in writing.</li>
+                            <li>They tend to learn best by reading, taking notes, listening to lectures, and discussion and debate.</li>
+                            <li>This intelligence is high in writers, lawyers, philosophers, journalists, politicians, and teachers.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Intra Personal Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>The ability to distinguish among an individual's own feelings, to accurate mental models of themselves, and use them to make decisions about life.</li>
+                            <li>The capacity to know one's self; careers which suit those with this intelligence include philosophers, psychologists, theologians, writers, and scientists.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Logical Mathematical Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>The ability to reason and calculate.</li>
+                            <li>Enables individuals to use and appreciate abstract relations.</li>
+                            <li>The ability to manipulate numbers, quantities, operations, etc.</li>
+                            <li>Many scientists, mathematicians, engineers, doctors, and economists function at this level of intelligence.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Naturalistic Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>Allows one to distinguish among, classify, and use features of the environment. The ability to discriminate among living things and to see patterns in the natural world.</li>
+                            <li>Careers which suit those with this intelligence include wildlife photographers, naturalists, conservationists, gardeners, and farmers.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Inter Personal Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>Enables individuals to recognize and make distinctions among others' feelings and intentions.</li>
+                            <li>The ability to work effectively with others and display empathy.</li>
+                            <li>Careers which suit those with this intelligence include politicians, managers, teachers, and social workers.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Bodily Kinesthetic Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>Allows individuals to use all or part of one's body to create products, solve problems, or present ideas and emotions. Using the body in highly differentiated ways for expressive, recreational, or goal-directed purposes.</li>
+                            <li>People who have this intelligence usually enjoy acting or performing, and in general, they are good at building and making things.</li>
+                            <li>Careers which suit those with this intelligence include athletes, dancers, actors, surgeons, builders, and soldiers.</li>
+                        </ul>
+                    </div>
+        
+                    <button class="accordion-button">Musical Rhythmic Intelligence</button>
+                    <div class="accordion-panel">
+                        <ul>
+                            <li>As you know, the Indian education system focuses more on cramming information in the minds of our children, rather than giving them true knowledge, which they can use to shape a successful career. Our system also overlooks the specific learning needs of each child, who is unique, resulting in immense stress.</li>
+                            <li>Shockingly, over 12,000 students commit suicides in India due to exam-related stress. This number is alarming and makes us wonder where our system is going wrong.</li>
+                            <li>You, as parents, need to take an active role in understanding the special intrinsic potential of your child, and design suitable learning methods around your child's needs. The DMI Assessment technique has been developed by scientists and research experts from world-renowned universities and is based on knowledge from genetics, embryology, dermatoglyphics, psychology, and neuroscience.</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="intelligence-visual">
+                    <img src="images/dmitimg2.png" alt="Multiple Intelligences Chart">
+                </div>
+            </div>
+        </div>
+
+        <div class="full-width-container">
+            <div class="flexible-layout">
+                <div class="content-block">
+                    <div class="main-header">Learning Styles</div>
+                    <div class="intro-text">
+                        <strong>Prof. Neil Flemming</strong> said there are three ways by which we receive information and our brain shows a preference towards any action.
+                        <br><br>
+                        He classified these three learning styles:
+                    </div>
+                    <button class="toggle-button">Auditory Learning Style</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Learn best through listening.</li>
+                            <li>Prefer lectures and discussions.</li>
+                            <li>Good at remembering spoken information.</li>
+                        </ul>
+                    </div>
+    
+                    <button class="toggle-button">Visual Learning Style</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Learn best through seeing.</li>
+                            <li>Prefer diagrams, charts, and written instructions.</li>
+                            <li>Good at remembering visual details.</li>
+                        </ul>
+                    </div>
+    
+                    <button class="toggle-button">Kinesthetic Learning Style</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Learn best through doing.</li>
+                            <li>Prefer hands-on activities and experiments.</li>
+                            <li>Good at remembering physical actions.</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="content-block">
+                    <div class="main-header">Types of Quotients</div>
+                    <button class="toggle-button">IQ (Intelligence Quotient)</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Measures cognitive abilities and intelligence.</li>
+                            <li>Assesses logical reasoning, problem-solving, and understanding.</li>
+                        </ul>
+                    </div>
+    
+                    <button class="toggle-button">EQ (Emotional Quotient)</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Measures emotional intelligence.</li>
+                            <li>Assesses the ability to identify, understand, and manage emotions.</li>
+                        </ul>
+                    </div>
+    
+                    <button class="toggle-button">CQ (Creative Quotient)</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Measures creative thinking and problem-solving abilities.</li>
+                            <li>Assesses originality and the ability to think outside the box.</li>
+                        </ul>
+                    </div>
+    
+                    <button class="toggle-button">AQ (Adverse Quotient)</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Measures resilience and the ability to cope with adversity.</li>
+                            <li>Assesses the ability to overcome challenges and setbacks.</li>
+                        </ul>
+                    </div>
+    
+                    <button class="toggle-button">VQ (Visionary Quotient)</button>
+                    <div class="hidden-content">
+                        <ul>
+                            <li>Measures visionary thinking and foresight.</li>
+                            <li>Assesses the ability to imagine future possibilities and trends.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+<script>
+    var buttons = document.getElementsByClassName("toggle-button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            this.classList.toggle("active-toggle");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+
+        <script>
+            var accordionButtons = document.getElementsByClassName("accordion-button");
+            for (var i = 0; i < accordionButtons.length; i++) {
+                accordionButtons[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        </script>
+
+
+  
+  
+  
+
+  <div class="container12" id="container12">
+    <div class="company-info">
+        <center><img src="images/logo.PNG" alt="Company Logo" style="width: 166px; height: 169px;"></center>
+        <h2>Advance career technologies</h2>
+        <p>
+            We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.
+        </p>
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="company-info">
+            <center><img src="images/logo.PNG" alt="Company Logo" style="width: 166px; height: 169px;"></center>
+            <h2>Advance career technologies</h2>
+            <p>
+                We are a dynamic team offering a variety of services to help you achieve your goals. Our commitment to quality ensures the best results for our clients worldwide.
+            </p>
+        </div>
+    
+        <div class="useful-links">
+            <h3>Useful Links</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <button class="custom-btn btn-3"><a href="dmit.html"  style="color: white"><span>DMIT</span></a></button>
+              
+                <button class="custom-btn btn-3"><a href="midbrain.html"  style="color: white"><span>Mid Brain</span></a></button>
+          
+                <button class="custom-btn btn-3"><a href="courses.html"  style="color: white"><span>Courses</span></a></button>
+            </ul>
+        </div>
+        <div id="chatbot-container">
+            <button id="chatbot-button">🤖</button>
+            <div id="chatbox">
+                <div id="chatbox-header">
+                    Welcome to Advance Career Technologies!
+                </div>
+                <div id="chatbox-content">
+                    <div class="chat-message">Hi there! How can I help you?</div>
+                    <div id="predefined-questions">
+                        <!-- Predefined questions will be injected here -->
+                    </div>
+                </div>
+                <div id="chatbox-input">
+                    <textarea id="user-input" rows="1" placeholder="Type your question here..."></textarea>
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+        </div>
+        <script src="chatbot.js"></script>
+        
+        <div class="quick-contact">
+            <h3>Quick Contact</h3>
+            <form action="" id="contactForm">
+                <div class="alert">Thank you! Your message has been sent successfully.</div>
+        
+                <!-- Form Fields with Name Attributes -->
+                <input type="text" name="name" id="name" placeholder="Name*" required>
+                <input type="text" name="phone" id="phone" placeholder="Phone Number*" required>
+                <input type="email" name="email" id="emailid" placeholder="Email*" required>
+                <textarea name="message" id="msgContent" placeholder="Message" rows="4" required></textarea>
+        
+                <button type="submit">SUBMIT</button>
+            </form>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+            <script src="./mail.js"></script>
+        </div>
+        </div>
+    
+        <section id="footermain">
+            <footer>
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                Email: <a href="mailto:support@acareertech.com" class="contact-link">support@acareertech.com</a>
+                            </li>
+                            <li>
+                                Phone:  <a href="tel:+7977728198" class="contact-link">7977728198</a> /
+                                <a href="tel:+8108803786" class="contact-link">8108803786</a>
+                            </li>
+                            <li>
+                                Address: <a href="https://www.google.com/maps?q=G-18+Eternity+Mall,+Teen+Hath+Naka,+Thane+West-400601+A-1,+Chandresh+Rachna+CHS,+Lodha+Road,+Mira+Road(E),+Thane-401107" 
+                                   target="_blank" class="contact-link">
+                                   G-18, Eternity Mall, Teen Hath Naka, Thane West-400601<br>
+                                   A-1, Chandresh Rachna CHS, Lodha Road, Mira Road(E), Thane-401107
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-bottom">
+                    <p>&copy; 2024 ACT. All rights reserved.</p>
+                </div>
+            </footer>
+        </section>
+
+<!-- jQuery, Popper.js, and Bootstrap JS (in correct order) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
